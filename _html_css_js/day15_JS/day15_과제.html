@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set을 이용한 LOTTO 만들기</title>
+</head>
+<body>
+    <h1>
+        1 ~ 45 까지 중복되지 않게 숫자 6개를 랜덤으로 추출 > 출력
+    </h1>
+    
+    <!-- 로또 번호 채우기 / 결과 function -->
+    <button type="button" id="user">랜덤번호 6자리 생성</button>
+    <h1 id="usernumprint">로또번호 출력</h1>
+    <button type="button" id="com">당첨번호 7자리( + [보너스번호]) 생성</button>
+    <h1 id="comnumprint">당첨번호 출력</h1>
+    <button type="button" id="resultbtn">결과확인</button>
+    <h1 id="result">결과확인</h1>
+    <!-- (맞은 개수) 축 (등수)등 당첨 -->
+
+    <span>==============================================</span><br><br>
+
+    <button type="button" id="makeRandom">랜덤번호 6자리 생성</button>
+    <h1 id="printNum">로또번호 출력</h1>
+    <button type="button" id="makeRandom2">당첨번호 7자리( + [보너스번호]) 생성</button>
+    <h1 id="printNum2">당첨번호 출력</h1>
+    <button type="button" id="ranking()">결과확인</button>
+    <h1 id="printResult">결과확인</h1>
+
+
+    <script>
+
+        // const userset = new Set();
+        // const comset = new Set();
+        // let cnt=0;
+
+        // function rannum(){
+        //     return Math.floor(Math.random()*45)+1;
+        // }
+                
+        // // user 번호 생성
+        // document.getElementById('user').addEventListener('click',()=>{
+        //     userset.clear();
+        //     let str = '';
+        //     while(userset.size<6){
+        //         userset.add(rannum());
+        //         console.log(userset);
+        //     }
+        //     userset.forEach(function(value){
+        //         console.log(value);
+        //         str += `${value} `;
+        //     })
+        //     document.getElementById('usernumprint').innerHTML = str;
+        // })
+                
+        // // com 번호 생성
+        // document.getElementById('com').addEventListener('click',()=>{
+        //     comset.clear();
+        //     let str2 = '';
+        //     while(comset.size<6){
+        //         comset.add(rannum());
+        //         console.log(comset);
+        //     }
+        //     comset.forEach(function(value){
+        //         console.log(value);
+        //         str2 += `${value} `;
+        //     })
+        //     let bonus = rannum();
+        //     comset.add(bonus);
+        //     str2 += `[${bonus}]`;
+        //     document.getElementById('comnumprint').innerHTML = str2;
+        // })
+
+        // // 결과출력
+        // document.getElementById('resultbtn').addEventListener('click',()=>{
+        //     let str3='';
+        //     userset.forEach(function(v){
+        //         comset.forEach(function(k){
+        //             if(v==k){
+        //                 cnt++;
+        //             }
+        //         })
+        //     })
+        //     switch(cnt){
+        //         case 2: str3 = `5등 당첨!`; break;
+        //         case 3: str3 = `4등 당첨!`; break;
+        //         case 4: str3 = `3등 당첨!`; break;
+        //         case 5: str3 = `2등 당첨!`; break;
+        //         case 6: str3 = `1등 당첨!`; break;
+        //         case 7: str3 = `1등 당첨!`; break;
+        //         default : str3 = `꽝!`; break;
+        //     }
+        //     document.getElementById('result').innerHTML = 
+        //     `${str3} (맞은 개수 : ${cnt})`;
+        // })
+
+        // -------------------------------------------------------------------------------
+
+        const lottoArr=[];              // 유저번호
+        const lottoSet=new Set();
+        const rNumArr=[];               // 당첨번호
+        const rNumSet=new Set();
+
+        let bonus=0;                    // 보너스번호 처리 변수
+
+
+        function randomNum(lottoSet, arr, num){        // num = 채울 개수
+            while(lottoSet.size<num){
+                let rNum=Math.floor(Math.random()*10)+1;
+                lottoSet.add(rNum);
+                arr.push(rNum);
+            }
+            for(let num of lottoSet){
+                arr.push(num);
+            }
+        }
+
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        String : 가장 많이 다루는 데이터 타입
+    </h1>
+    <ul>
+        <li>java에서의 String method와 거의 유사</li>
+        <li>문자열 데이터는 index(0부터 시작)를 가지고 있다.</li>
+        <li>문자열 값 내에서 'br' 개행(줄바꿈) 하는 것은 추천하지 않는다. </li>
+        <li>new String() : 객체 타입으로 선언 가능하나, 추천하지 않는다.</li>
+        <li>length : 문자열의 총 길이</li>
+    </ul>
+    <ul>
+        <li>추출 관련 메서드 : substring(), substr(), slice()</li>
+        <li>문자대체관련 메서드 : replace(old, new) : 처음 찾은 값만 가능</li>
+        <li>trim() : 양쪽 공백 제거</li>
+        <li>padStart(길이, 채울문자) / padEnd(길이, 채울문자)
+            ex. 010101-4******* / ***** 시 ...
+        </li>
+        <li>charAt(index) / indexOf() / lastindexOf() ...</li>
+        <li>startWith("문자열") / endWith("문자열") : 해당 문자열 앞 / 뒤에 문자열이 존재하는지 확인하는 메서드
+            > return 값은 true / false
+        </li>
+    </ul>
+
+    <script>
+        let str1 = "Apple, Banana, Orange";
+        console.log(str1.slice(0, 10));     // 0~5번지까지 표현(마지막 번지는 포함하지 않는다.)
+        // slice는 substring과 사용방법이 같다.
+        // *slice는 index에 -를 입력하면 뒤에서부터 추출 가능
+        console.log(str1.slice(-11));
+        // substring(startindex, endindex);
+        // substr(startindex, count);
+
+        let str2 = 'hello java world~ java'
+        let newstr = str2.replace('java', 'javascript');    // 앞에 존재하는 문자열('java')만 변경
+        console.log(newstr);
+        let newstr2 = str2.replaceAll('java', 'javascript');    // 존재하는 모든 문자열('java') 변경
+        console.log(newstr2);  
+        
+        let newstr3 = str2.replace(/java/g, 'javascript');    // /java/ 옵션 : /text/i > 대소문자 구분X,   /text/g > 전역검색
+        console.log(newstr3);
+        let newstr4 = str2.replace(/java/ig, 'javascript');    // /java/ 옵션 : /text/i > 대소문자 구분X,   /text/g > 전역검색
+        console.log(newstr4);
+
+        let padText = 'abc';
+        console.log(padText.padEnd(20, '-'));
+
+        // rNum 주민등록번호 > 010101-3****** 로 표현
+        let rNum = "010101-4213123";
+        console.log(rNum.slice(0,8).padEnd(14, "*"));
+
+        let rNumLen = rNum.length;
+        console.log(rNum.slice(0, rNum.indexOf('-')+2).padEnd(rNumLen, "*"))
+
+
+
+
+        // rNum의 성별을 추출 > console 출력
+        // - 다음의 숫자가 1 or 3 이면 '남' / 2 or 4 면 '여'
+        console.log(rNum.slice(rNum.indexOf('-')+1, rNum.indexOf('-')+2));
+        let rNum2 = rNum.slice(rNum.indexOf('-')+1, rNum.indexOf('-')+2);
+    
+        console.log(rNum.charAt(rNum.indexOf('-')+1));
+        let rNum3 = rNum.charAt(rNum.indexOf('-')+1);
+        
+        if(rNum3 == 1 || rNum3 == 3){
+            console.log('남');
+        }else{
+            console.log('여');
+        };
+
+
+        // 삼항 연산자 사용 가능
+        console.log(rNum3==="1" || rNum3==="3" ? "남" : "여");
+
+
+
+        let fullFileName = "20240318_javascript.string_method.html";
+        // 파일명(javascr...thod)
+        let startstr = fullFileName.indexOf('_')+1;
+        let endstr = fullFileName.lastIndexOf('.');
+        console.log(fullFileName.slice(startstr, endstr));
+        // 작성일자(20240318) 
+        console.log(fullFileName.slice(0, startstr-1));
+        // 확장자(html)
+        console.log(fullFileName.slice(endstr+1));
+        
+    
+
+
+
+    </script>
+
+
+</body>
+</html>

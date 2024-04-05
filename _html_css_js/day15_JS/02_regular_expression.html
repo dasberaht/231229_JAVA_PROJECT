@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        # 정규표현식(Regular Expression)
+        문자 내에서 특정 내용을 찾거나 대체, 발췌 하는데 사용(통계 등에서 주로 사용)
+    </h1>
+    <ul>
+        <li>
+            regExp 단어로 많이 사용
+        </li>
+        <li>
+            특정 데이터를 탐색, 확인, 존재여부를 쉽게 파악하기 위한 규칙
+        </li>
+        <li>
+            웹 분야에서는 password 규칙, 첨부파일의 규칙 등에 사용(자주 사용하지는 않는다.)
+        </li>
+        <li>
+            데이터분석 관련 필수
+        </li>
+        <li>
+            다른 언어에서도 거의 비슷한 형식으로 활용
+        </li>
+    </ul>
+    <ul>
+        <li>
+            /regExp/i
+            > (/ /) : 시작기호, 종료기호
+            > regExp : 패턴
+            > i : flag(옵션)
+        </li>
+        <li>
+            ('str').match(/regExp/flag) : str 단어에서 matching되는 항목들을 배열로 리턴
+        </li>
+        <li>
+            ('str').replace(/regExp/flag, '바꿀문자') : 정규표현식에 매칭되는 항목을 바꿀문자로 변경
+        </li>
+        <li>
+            ('str').split(/regExp/) : 정규표현식에 매칭되는 항목으로 쪼개어 배열로 리턴
+        </li>
+        <li>
+            (/regExp/).test('str') : 문자열이 정규표현식 규칙에 맞는지 체크하여, true / false 리턴
+        </li>
+    </ul>
+    <ul>
+        <li>
+            정규표현식 플래그(https://inpa.tistory.com/entry/JS-%F0%9F%93%9A-%EC%A0%95%EA%B7%9C%EC%8B%9D-RegExp-%EB%88%84%EA%B5%AC%EB%82%98-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-%EC%89%BD%EA%B2%8C-%EC%A0%95%EB%A6%AC)
+            
+            regexr 사이트(https://regexr.com/)
+        </li>
+        <li>
+            i : 대소문자 구분X / g : 전역검색 / m : 줄바꿈 포함
+        </li>
+        <li>
+            a-zA-Z : 영어 알파벳(대소문자 포함)    /   ㄱ-ㅎ가-힣 : 한글   /   0-9 : 숫자
+        </li>
+        <li>
+            . : 모든문자열(숫자, 한글, 영어, 특수문자, 공백 포함) 단, 줄바꿈X
+        </li>
+        <li>
+            \d : 숫자
+            \D : 숫자가 아닌 것
+            \s : 공백
+            \S : 공백이 아닌 것
+            \w : 영숫자
+            \W : Not
+            \특수기호 : \! \@ ...
+        </li>
+        <li>
+            검색 패턴 : | > or   ex. a | b
+        </li>
+        <li>
+            [] : or 의 묶음 문자들 중 하나(대괄호 안의 값을 낱개로 쪼개어 보는 형태)
+            ex. /abc/     >   "abc"를 포함하는~ 을 의미
+                /[abc]/   >   "a", "b", "c" 중 하나를 포함하는~ 을 의미
+                [a-z]     >   "a~z"까지 중 하나를 포함하는~ 을 의미
+        </li>
+        <li>
+            [^문자] : 괄호안의 문제를 제외한 것
+            ex. [^abcd]  > a, b, c, d 를 제외한 나머지
+        </li>
+        <li>
+            ^문자열$ : ^(시작) / $(끝)을 의미
+        </li>
+    </ul>
+
+    <script>
+        let testText = 'This is Javascript Regular Expression';
+        console.log(testText.match(/is/g));
+
+        const fileName = ['abc.jpg', 'main.gif', 'test.txt', 'doc.pdf', 'code.js'];
+        for(let file of fileName){
+            // console.log(file.match(/(jpg|jpeg|png|gif)/i));
+            if(file.match(/(jpg|jpeg|png|gif)/i)){
+                console.log('이미지 파일입니다.' + file);
+            }else{
+                console.log('그 외 파일입니다.' + file);
+            }
+        }
+    </script>
+
+</body>
+</html>

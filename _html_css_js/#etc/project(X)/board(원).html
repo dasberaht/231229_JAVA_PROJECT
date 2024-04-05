@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="../project/board.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="wrapper"></div>
+    <div class="container">
+        <div class="subtitle">
+            <div class="inner">
+                <h1>Board</h1>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li>●</li>
+                    <li><a href="../project/board.html">Board</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainboard">
+            <div class="inner">
+                <div class="search">
+                    <!-- 예시 -->
+                    <p class="boardcnt">총 n건의 게시글이 있습니다.</p>
+                    <div class="searchinner">
+                        <input type="text" placeholder="검색어를 입력하세요.">
+                        <button type="button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                          </svg></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="boardlist">
+                <li>
+                    <a href="">
+                        <span class="listnum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+                            <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06"/>
+                          </svg></span>
+                        <span class="boardtitle">제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목</span>
+                        <span class="day">2024. 3. 28.</span>
+                        <span class="id">작성자</span>
+                    </a>
+                </li>
+            </ul>
+            <button type="button" class="boardwrite"><a href="../project/boardwrite.html">글쓰기</a></button>
+            
+            <button type="button" class="readmore">+</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="fInfo">
+            <ul class="info">
+                <li>한국맥도날드(유)</li>
+                <li>대표이사: 김기원</li>
+                <li>사업자등록번호: 101-81-26409</li>
+                <li>전화주문: 1600-5252</li>
+                <p class="copy">COPYRIGHT &copy; 2019 ALL RIGHTS RESERVED BY McDonald's.</p>
+            </ul>
+        </div>
+    </footer>
+
+
+<!-- 로그인한 경우? : https://alisyabob.tistory.com/224 -->
+<!-- localstorage 사용 : https://cloudcoke.tistory.com/31 -->
+<!-- 
+    *1. 로컬 스토리지에서 JSON타입(key:value 값)의 데이터를 받아오도록 설정
+    *2. 게시글 등록하면, 게시판 페이지를 싱핼 후 domcontentloaded(문서 로드, 파싱) 시 출력, 등록되도록 설정
+
+    3. 총 게시글 개수 
+    4. 게시글 넘버링
+    5. 제목 글자 수 범위 설정(textoverflow / wrap 설정)
+    6. 게시글 클릭 시 출력화면 설정
+    7. 검색 시 게시글 출력
+ -->
+    <script>
+        let today = new Date();
+        let day = today.toLocaleDateString();
+        let time = today.toLocaleTimeString();
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const storedPost = JSON.parse(localStorage.getItem('post'));
+
+            if (storedPost) {
+                const boardList = document.querySelector('.boardlist');
+
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a href="#">    
+                        <span class="listnum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-megaphone-fill" viewBox="0 0 16 16">
+                            <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06"/>
+                        </svg></span>
+                        <span class="boardtitle">${storedPost.title}</span>
+                        <span class="day">${day}</span>
+                        <span class="id">${storedPost.writername}</span>
+                    </a>
+                `;
+                boardList.appendChild(listItem);
+            }
+        });
+    </script>
+
+</body>
+</html>

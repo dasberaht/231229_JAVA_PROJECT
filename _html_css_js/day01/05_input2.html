@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        # input 속성
+            > 모든 태그는 속성attribute을 가지고 있다
+                <태그명 속성="값" 속성="값" 속성>
+                1. name : 서버로 정보를 전송 시 변수명으로 사용되는 속성; 변수(name = value의 형태)
+                2. value : 서버로 전송 시 값으로 사용되는 속성; 값 
+                3. id : 한 페이지에 하나만 허용(같은이름 중복불가); 주로 js 에서 구분자 역할
+                        id가 겹치면 에러가 발생하지 않으나, 작동하지 않을 수 있다.
+                4. class : 한번에 여러 개 지정 가능; css / js 에서 구분자 역할을 하는 속성
+                           class="a b ab abc"  >  a b ab abc 4개의 class
+                5. readonly : 읽기전용
+                6. disabled : 비활성화(서버로 값을 보내지 않음; 따라서 값을 보내고자 할 때는 hidden 사용)
+                7. tebindex : 탭 순서 정할 때 사용
+
+                단축키
+                    alt + 마우스 왼쪽 클릭  : 입력 커서 생성(여러 곳에 같은 글 작성 가능)
+
+                textarea 태그 : 큰 글쓰기 박스 ex. <textarea cos="50" rows="10"> </textarea>
+                pre 태크 : <pre> 화면에 보이는대로 태그 값 출력 </pre>
+     -->
+
+     
+
+     <form action="">
+
+        <input type="text" name="a" value="name" tabindex="2"><br>
+        <input type="text" name="b" value="age" tabindex="4" readonly><br>
+
+        <input type="text" name="c" value="dis" tabindex="3" disabled><br>
+
+        <input type="text" name="d" placeholder="test" tabindex="1"><br>
+        
+        <!-- checked : checkbox, radio 에서 사용하면, 기본값이 체크가 된 것으로 표시 -->
+        <input type="checkbox" name="e" checked> 선택1
+        <input type="checkbox" name="e"> 선택2 <br>
+        <input type="radio" name="f" checked> 라디오1
+        <input type="radio" name="f"> 라디오2 <br>
+        <input type="submit" value="submit">
+
+     </form>
+
+
+
+
+</body>
+</html>

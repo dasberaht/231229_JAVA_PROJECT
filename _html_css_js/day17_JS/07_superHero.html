@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: black;
+        }
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 80px;
+            text-align: center;
+            margin-bottom: 80px;
+            margin-top: 200px;
+            color: white;
+        }
+        h3{
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+            text-align: center;
+        }
+        #main{
+            width: 60%;
+            height: 300px;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hero{
+            color: white;
+            text-align: left;
+        }
+        div>li{
+            padding-left: 20px;
+            color: white;
+        }
+        div>span{
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <!-- https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json -->
+
+    <p id="title"></p>
+    <div id="main"></div>
+
+    <script>
+
+        fetch(`https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json`)
+        .then(resp => resp.json())
+        .then(result => printtitle(result));
+        // .then(result => printtitle(result));
+
+
+        function printtitle(obj){
+            console.log(obj);
+            let title = document.getElementById('title');
+            title.innerHTML = `<h1>${obj.squadName}</h1>`;
+            title.innerHTML += `<h3>HomeTown : ${obj['homeTown']} // Formed : ${obj['formed']}</h3>`;   // obj.homeTown / obj.formed 사용 가능
+            
+            let str = ``;
+            let a = obj.members;
+            for(let j=0; j<a.length; j++){
+                str +=
+                `<div class="hero"><span>${a[j].name.toUpperCase()}</span><br><br>
+                    Secretidentity : ${a[j].secretIdentity}<br>
+                    Age : ${a[j].age}<br>
+                    Superpowers : <br><br>`;
+                    let b = a[j].powers;
+                    // for(let i=0; i<b.length; i++){          
+                    //     str += `<li>${b[i]}</li>`;
+                    // };
+                    for(let p of a[j].powers){      // for ~ of 사용
+                        str += `<li>${p}</li>`;
+                    }
+                    str += `</div>`;
+                }
+                
+                document.getElementById('main').innerHTML = str;
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        // let main = document.getElementById('main');
+
+
+        // main.innerHTML += 
+        // `<div class="hero"><span>${obj.members[0].name.toUpperCase()}</span><br><br>
+        // Secretidentity : ${obj.members[0].secretIdentity}<br>
+        // age : ${obj.members[0].age}<br>
+        // Superpowers : <br><br>
+        // <li>${obj.members[0].powers[0]}</li>
+        // <li>${obj.members[0].powers[1]}</li>
+        // <li>${obj.members[0].powers[2]}</li></div>`;
+
+        // main.innerHTML += 
+        // `<div class="hero"><span>${obj.members[1].name.toUpperCase()}</span><br><br>
+        // Secretidentity : ${obj.members[1].secretIdentity}<br>
+        // age : ${obj.members[1].age}<br>
+        // Superpowers : <br><br>
+        // <li>${obj.members[1].powers[0]}</li>
+        // <li>${obj.members[1].powers[1]}</li>
+        // <li>${obj.members[1].powers[2]}</li></div>`;
+
+        // main.innerHTML += 
+        // `<div class="hero"><span>${obj.members[2].name.toUpperCase()}</span><br><br>
+        // Secretidentity : ${obj.members[2].secretIdentity}<br>
+        // age : ${obj.members[2].age}<br>
+        // Superpowers : <br><br>
+        // <li>${obj.members[2].powers[0]}</li>
+        // <li>${obj.members[2].powers[1]}</li>
+        // <li>${obj.members[2].powers[2]}</li>
+        // <li>${obj.members[2].powers[3]}</li>
+        // <li>${obj.members[2].powers[4]}</li></div>`;
+    </script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+

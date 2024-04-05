@@ -1,0 +1,9 @@
+단어장
+apple 사과
+hi 안녕
+four 넷
+one 하나
+cheap 싼
+two 둘
+three 셋
+bye 안녕!

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: darkcyan;
+        }
+
+        .container{
+            background-color: aquamarine;
+            width: 300px;
+            /* 화면 정중앙 위치 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            border-radius: 10px;
+            /* 안쪽 여백 주기 */
+            padding: 20px 30px;
+        }
+
+        .text-field, .btn{
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        .btn{
+            background-color: darkcyan;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .link{
+            margin-top: 30px;
+        }
+
+        .link>a{
+            color: darkgrey;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form action="">
+            <input type="text" name="id" placeholder="아이디" class="text-field">
+            <input type="password" name="pw" placeholder="패스워드" class="text-field">
+            <input type="submit" value="로그인" class="btn">
+        </form>
+
+        <div class="link">
+            <a href="">비밀번호를 잊어버리셨나요</a>
+        </div>
+
+    </div>
+</body>
+</html>

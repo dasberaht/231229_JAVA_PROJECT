@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        > div 3개를 만들고, naver/google/daum 사이트로 연결
+        > 연결 시 새 창으로 띄어지도록 설정
+        > 각각의 div 색을 달리하여 스타일 설정
+        > 링크 색도 변경
+
+        > ul > li*10 : 1~10까지 표현
+        > 짝수 : red
+        > 3, 6, 9 : green
+        > 1, 10 : 굵게 표시
+        > 글자 뒤 요소에 . 추가
+
+        # a태그 의사 선택자 순서
+        1) a:link
+        2) a:visited
+        3) a:hover
+        4) a:active
+
+    -->
+    
+    <style>
+        
+        /* div
+            block tag : 넓이/높이를 가질 수 있다. */
+        div{
+            background-color: aquamarine;
+            border: 1px solid black;
+            width: 100px;
+            height: 30px;
+        }
+
+        .naver{
+            background-color: darkmagenta;
+        }
+
+        .google{
+            background-color: darkgoldenrod;
+        }
+
+        .daum{
+            background-color: darkolivegreen;
+        }
+
+
+        .naver :link{
+            color: red;
+        }
+
+
+        /* div.naver :link{
+            color: rgb(139, 0, 65);
+        }
+        
+        div.google :link{
+            color: darkorange;
+        }
+
+        div.daum :link{
+            color: darkgreen;
+        }
+
+        div.naver :visited{
+            color: rgb(0, 140, 255);
+        }
+
+        div.google :visited{
+            color: rgb(231, 230, 230);
+        }
+
+        div.daum :visited{
+            color: gold;
+        }
+
+        div.naver :hover{
+            background-color: rgb(7, 219, 7);
+        }
+
+        div.google :hover{
+            background-color: whitesmoke;
+        }
+
+        div.daum :hover{
+            background-color: yellow;
+        }
+
+
+        div :active{
+            background-color: black;
+        } */
+
+
+    
+
+        ul li:nth-child(even){
+            color: red;
+        }
+
+        ul li:nth-child(3n){
+            color: green;
+        }
+
+
+        ul>li:first-child, ul>li:last-child{
+            font-weight: 700;
+        }
+
+        /* ul li:first-child{
+            font-weight: bold;
+        }
+
+        ul li:last-child{
+            font-weight: bold;
+        } */
+
+        ul li:after{
+            content: ". ";
+        }
+
+        ul{
+            padding-left: 0;
+        }
+
+        ul>li{
+            list-style: none;
+            display: inline;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="naver">
+        <a href="http://www.naver.com" target="_blank">naver</a>
+    </div>
+    <div class="google">
+        <a href="http://www.google.com" target="_blank">google</a>
+    </div>
+    <div class="daum">
+        <a href="http://www.daum.net" target="_blank">daum</a>
+    </div>
+
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+
+
+</body>
+</html>

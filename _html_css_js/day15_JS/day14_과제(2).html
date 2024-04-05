@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        button{
+            width: 120px;
+            height: 120px;
+            margin: 20px;
+            border: none;
+        }
+
+        button img{
+            width: 120px;
+            height: 120px;
+            box-shadow: 5px 5px 0px 5px rgba(0, 0, 0, 0.247);
+            border: 0px solid black;
+        };        
+
+    </style>
+</head>
+<body>
+    <div>
+    <button type="button"  onclick="play(1)"><img src="../image/scissors.png" alt="가위"></button>
+    <button type="button"  onclick="play(2)"><img src="../image/rock.png" alt="바위"></button>
+    <button type="button"  onclick="play(3)"><img src="../image/paper.png" alt="보"></button>
+    </div>
+    <h3 id="result"></h3>
+
+    <script>
+
+        // 누적변수 선언
+        let PlayerState = 0;    // 숫자상태
+        let PlayerStateChar = '';   // 문자상태
+        let ComState=0;
+        let ComStateChar ='';
+        let win =0;
+        let draw = 0;
+        let lose = 0;
+        let r1='';  // 결과 문자
+        let result =0;
+
+        // 게임 메인 기능 처리
+        function play(player){
+            //player 값 생성 기능
+            if(player == 1){
+                PlayerState = 1;
+                PlayerStateChar = '가위';
+            }else if(player == 2){
+                PlayerState = 2;
+                PlayerStateChar = '바위';
+            }else{
+                PlayerState = 3;
+                PlayerStateChar = '보';
+            };
+
+            setComState();      // 컴퓨터 상태 실행 처리
+            setDistinct();      // 결과 호출
+            showResult();       // 결과 출력
+
+        };
+
+        // 컴퓨터 랜덤값 생성 상태 기능
+        function setComState(){
+            ComState = Math.floor(Math.random()*3)+1;
+            switch(ComState){
+                case 1: ComStateChar ='가위'; break;
+                case 2: ComStateChar ='바위'; break;
+                case 3: ComStateChar ='보'; break;
+            };
+        };
+
+        // 결과출력 result : 0(무)  1(승) -1(패)
+        function setDistinct(){
+            if(PlayerState == ComState){
+                result = 0;
+            }else{
+                // 1=가위, 2=바위, 3=보
+                if(PlayerState == 1){
+                    ComState == 2 ? result= -1 : result= 1;
+                }else if(PlayerState == 2){
+                    ComState == 3 ? result= -1 : result= 1;
+                }else if(PlayerState == 3){
+                    ComState == 1 ? result= -1 : result= 1;
+                };
+            };
+
+        };
+
+        // 승률 계산 : win / total * 100
+        function getWinRate(){
+            return (win != 0) ? (win / (win+draw+lose))*100 : 0;
+        };
+
+        // 화면 출력 기능
+        function showResult(){
+            if(result == -1){
+                lose++;
+                show(result);
+            }else if(result == 1){
+                win++;
+                show(result);
+            }else{
+                draw;
+                show(result);
+            };
+            document.getElementById('result').innerText = r1;
+        };
+
+        function show(){
+            r1 = `[player: ${PlayerStateChar} / com: ${ComStateChar}]\n`
+            r1 +=`[player가 ${result == 1 ? "WIN" : result == 0 ? "DRAW" : "LOSE"}]\n`;
+            r1 += `현재전적\n승:${win} 무:${draw} 패:${lose}\n`;
+            r1 += `승률:${getWinRate().toFixed(2)}`;
+        };
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

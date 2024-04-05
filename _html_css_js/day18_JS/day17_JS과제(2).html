@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+        div>h2{
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        form{
+            background-color: rgb(18, 70, 70);
+            width: 500px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        form>button{
+            padding: 10px;
+            border: 0;
+            background-color: white;
+            box-shadow: 3px 3px 3px gray;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        div>ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div>ul>li{
+            cursor: pointer;
+            height: 30px;
+            padding: 12px 10px;
+            background-color: rgba(80, 50, 12, 0.562);
+            position: relative;
+        }
+        div>ul>li:nth-child(odd){
+            background-color: rgba(110, 70, 17, 0.562);
+        }
+        div>ul>li:hover{
+            background-color: darkslategrey;
+        }
+        .close{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 13px 20px;
+            transition: 0.5s;
+            height: 28px;
+        }
+        .close:hover{
+            background-color: brown;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add" class="btn">추가</button>
+        </form>
+        <div>
+            <ul id="itemList">
+            </ul>
+        </div>
+    </div> -->
+
+    <div id="wapper">
+        <h2>여행 준비물 점검 목록</h2>
+        <form action="">
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add" class="btn">추가</button>
+        </form>
+        <div>
+            <ul id="itemList">
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // *참고 <crud : https://cloudcoke.tistory.com/31>
+        //추가하는 목록을 저장, 삭제한 목록을 제거
+        let itemList = [];
+
+        document.getElementById('add').addEventListener('click', addList);      // 콜백에서 함수를 호출하는 형태(ex. 하나의 function만 실행할 경우 사용)
+
+        //아이템 추가 : 입력받은 아이템을 배열에 추가
+        function addList(){
+            let item = document.getElementById('item');
+            console.log(item.value);
+            if(item.value!==''){
+                itemList.push(item.value);
+                console.log(itemList);
+                item.value='';      // 추가 후 item 값을 비우기
+                item.focus();       // item에 focus 두기(autofocus="true"와 같이 병행하여 사용하는 것이 좋다.)
+                // 추가 후 화면에 뿌리기(함수 호출)
+                showList();
+            }else{
+                alert('값이 없습니다.');
+            }
+        }
+
+
+        // item을 화면에 뿌리기 : 배열에 있는 목록을 화면에 모두 뿌리기(주로 function으로 사용)
+        function showList(){
+            let list ='';       // 뿌릴 텍스트
+            for(let i=0; i<itemList.length; i++){
+                list += `<li id="list${i}">${itemList[i]}<span class="close" id=${i}>X</span></li>`;
+            }
+            document.getElementById('itemList').innerHTML = list;
+        }
+
+
+        // item 삭제 : 배열에서 해당 item을 제거
+        document.addEventListener('click',(e)=>{
+            console.log(e.target.classList);
+            if(e.target.classList.contains('close')){
+                // if가 실행 조건 : X('close') 버튼을 클릭
+                console.log('111');
+                // span tag에 설정한 id를 가져오기
+                let i = e.target.id;
+                console.log(i);
+                itemList.splice(i, 1);
+            }
+            // 삭제 후 남아있는 list 다시 뿌리기(삭제 후 다시 list를 뿌리므로, 배열순서가 다시 생성)
+            showList();
+        })
+
+
+
+
+
+
+
+
+        
+        
+
+                
+        //         const list = [];
+        //         let cnt = 0;
+
+        
+        // document.getElementById('add').addEventListener('click', () => {
+        //     let item = document.getElementById('item').value;
+        //     if (item === '') {
+        //         alert('값이 없습니다.');
+        //         return;
+        //     }
+        //     list.push(item);
+        //     console.log(list);
+        //     add();
+        //     document.getElementById('item').value = '';
+        // });
+
+        
+        // function add() {
+        //     let str = '';
+        //     list.forEach((item, index) => {
+        //         str += `<li id="list${index}" class="close" onclick="del(this)">${item}</li>`;
+        //     });
+        //     document.getElementById('itemList').innerHTML = str;
+        // }
+        
+
+        // function del(elem) {
+        //     let index = parseInt(elem.id);
+        //     list.splice(index, 1);
+        //     add();
+        // }
+        
+        
+
+    </script>
+</body>
+</html>

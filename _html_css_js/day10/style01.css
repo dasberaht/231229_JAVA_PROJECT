@@ -1,0 +1,534 @@
+@font-face{
+    font-family: noto_sans_kr;
+    src: url(../font/Noto_Sans_KR/NotoSansKR-VariableFont_wght.ttf);
+}
+body{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: noto_sans_kr;
+    color: black;
+}
+/* 굵은 글씨 사용 */
+.bold{
+    font-weight: 700;
+}
+/* 메뉴 세로 선 추가 */
+.top-menu>li{
+    position: relative;
+}
+main>.con1>.inner>a>.time>.ti{
+    position: relative;
+}
+.before::before{
+    content: " ";
+    background-color: rgba(105, 105, 105, 0.473);
+    width: 1px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-top: -6.5px;
+}
+
+
+
+.wrap{
+    width: 100%;
+    min-width: 1200px;
+}
+.inner{
+    width: 1170px;
+    margin: auto;
+    box-sizing: border-box;
+    /* background-color: antiquewhite; */
+}
+
+
+
+
+
+/* header */
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+}
+header>.inner{
+    height: 115px;
+    position: relative;
+}
+header>.inner>h1{
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+header>.inner>.top-menu{
+    display: flex;
+    justify-content: flex-end;
+}
+header>.inner>.top-menu>li{
+    /* margin: 10px 20px; */
+    padding: 10px 20px
+}
+header>.inner>.top-menu>li>a{
+    font-size: small;
+}
+header>.inner>.nav>ul{
+    height: 79px;
+    display: flex;
+    justify-content: center;
+}
+header>.inner>.nav>ul>li{
+    margin: 0 40px;
+}
+header>.inner>.nav>ul>li>a{
+    font-size: large;
+    font-weight: 700;
+    line-height: 79px;
+}
+header>.inner>.nav>ul>li>a:hover{
+    color: dimgray;
+}
+
+
+
+
+
+
+/* section slide image */
+section{
+    width: 100%;
+    height: 725px;
+    background-image: url(../day09/image_lotteworld/slide-img2.jpg);
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section>ul{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+/* section>ul>a>img:hover{
+    
+} */
+
+
+
+
+
+
+
+/* main */
+main>.con-box{
+    width: 100%;
+}
+main>.con-box>.inner{
+    padding: 120px 0;
+}
+
+/* main con1*/
+/* main>.con1{
+    border-right-color: blue;
+} */
+main>.con1>.inner{
+    height: 100px;
+    padding: 0;
+    /* background-color: brown; */
+}
+main>.con1>.inner>a{
+    text-align: center;
+    position: relative;
+}
+main>.con1>.inner>a>img{
+    position: absolute;
+    top: 25px;
+    left: 100px;
+}
+main>.con1>.inner>a>.time{
+    display: flex;
+    justify-content: center;
+    line-height: 100px;
+}
+main>.con1>.inner>a>.time>p{
+    font-size: 20px;
+    margin-right: 30px;
+}
+main>.con1>.inner>a>.time>.ti{
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+    font-size: 20px;
+}
+main>.con1>.inner>a>.time>.ti>p{
+    margin-right: 20px;
+    padding-left: 50px;
+}
+
+
+
+
+
+/* main con2 */
+main>.con2{
+    /* background-color: darkgoldenrod; */
+    background-image: url(../day09/image_lotteworld/bgimg1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+main>.con2>.inner{
+    height: 890px;
+    text-align: center;
+    /* background-color: dodgerblue; */
+}
+main>.con2>.inner>h1{
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: white;
+}
+main>.con2>.inner>h3{
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: white;
+}
+main>.con2>.inner>ul{
+    display: flex;
+    justify-content: space-between;
+}
+main>.con2>.inner>ul>li .img{
+    width: 574px;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+}
+main>.con2>.inner>ul>li .img1{
+    background-image: url(../day09/image_lotteworld/상설전시.jpg);
+    
+}
+main>.con2>.inner>ul>li .img2{
+    background-image: url(../day09/image_lotteworld/특별전시.jpg);
+}
+main>.con2>.inner>ul>li p{
+    height: 82px;
+    line-height: 82px;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+main>.con2>.inner>ul>li{
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+main>.con2>.inner>ul>li:hover{
+    border: 2px solid white;
+    transition: 1s;
+}
+
+
+
+
+/* main con3 */
+main>.con3{
+    /* background-color: rgb(11, 184, 69); */
+    background-image: url(../day09/image_lotteworld/program-img.jpg);
+    background-position: center;
+    background-size: cover;
+}
+main>.con3>.inner{
+    height: 715px;
+    text-align: center;
+    /* background-color: rgb(99, 122, 145); */
+}
+main>.con3>.inner>h1{
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+main>.con3>.inner>p{
+    font-size: 1.1em;
+    margin-bottom: 50px;
+    color: rgba(88, 88, 88, 0.863);
+}
+main>.con3>.inner>ul{
+    display: flex;
+    justify-content: space-between;
+}
+main>.con3>.inner>ul .img{
+    width: 375px;
+    height: 246px;
+}
+main>.con3>.inner>ul .textArea{
+    width: 375px;
+    height: 77px;
+}
+main>.con3>.inner>ul .textArea>p{
+    line-height: 77px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: white;
+}
+main>.con3>.inner>ul>li:hover{
+    box-shadow: 10px 10px 20px rgba(128, 128, 128, 0.644);
+}
+main>.con3>.inner>ul>li:hover .textArea p{
+    background-color: #1c7c57;
+    color: white;
+}
+
+
+
+/* main con4 */
+/* main>.con4{
+    background-color: rgb(184, 11, 106);
+} */
+main>.con4>.inner{
+    height: 800px;
+    text-align: center;
+    /* background-color: rgb(30, 191, 255); */
+}
+main>.con4>.inner>h1{
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+main>.con4>.inner>p{
+    font-size: 1.1em;
+    margin-bottom: 50px;
+}
+
+
+
+main>.con4>.inner>.news>.left{
+    border: 1px solid rgba(85, 85, 85, 0.37);
+    float: left;
+    width: 574px;
+    /* height: 402px; */
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: left;
+}
+main>.con4>.inner>.news>.left>h3{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+main>.con4>.inner>.news>.left>a{
+    border-bottom: 1px solid rgba(85, 85, 85, 0.37);
+    display: block;
+    padding-bottom: 35px;
+}
+main>.con4>.inner>.news>.left>a p{
+    font-size: 19px;
+    font-weight: 500;
+    /* text넘어가는 데이터 ...처리 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    margin-bottom: 50px;
+}
+main>.con4>.inner>.news>.left>a span{
+    color: gray;
+}
+main>.con4>.inner>.news>.left>ul{
+    margin-top: 27px;
+}
+main>.con4>.inner>.news>.left>ul>li{
+    margin-top: 27px;
+    margin-bottom: 26px;
+}
+main>.con4>.inner>.news>.left>ul>li>a{
+    display: block;
+    float: left;
+    width: 405px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    color: gray;
+}
+main>.con4>.inner>.news>.left>ul>li>span{
+    color: gray;
+}
+main>.con4>.inner>.news>.left{
+    position: relative;
+}
+main>.con4>.inner>.news>.left>.more{
+    width: 20px;
+    /* height: 20px; */
+    background-image: url(../day09/image_lotteworld/더보기icon.png);
+    background-repeat: no-repeat;
+    border-bottom: none;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+main>.con4>.inner>.news>.left>.more::before{
+    content: "더보기 ";
+    position: absolute;
+    top: 0;
+    right: 25px;
+    width: 50px;
+}
+
+
+
+main>.con4>.inner>.news>.right{
+    float: right;
+    width: 574px;
+    margin-left: 22px;
+    /* background-color: #1c7c57; */
+}
+main>.con4>.inner>.news>.right>.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+main>.con4>.inner>.news>.right>.top>.r1{
+    background-image: url(../day09/image_lotteworld/이용문의icon.png);
+    background-size: auto;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    width: 276px;
+    height: 188px;
+    padding: 128px 40px 40px 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(85, 85, 85, 0.37);
+    font-size: 16px;
+    font-weight: 700;
+}
+main>.con4>.inner>.news>.right>.top>.r2{
+    background-image: url(../day09/image_lotteworld/오시는길icon.png);
+    background-size: auto;
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    width: 276px;
+    height: 188px;
+    padding: 128px 40px 40px 40px;
+    box-sizing: border-box;
+    border: 1px solid rgba(85, 85, 85, 0.37);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+main>.con4>.inner>.news>.right>.bt{
+    background: url(../day09/image_lotteworld/전통혼례.jpg) no-repeat center;
+    /* background-image: url(../day09/image_lotteworld/전통혼례.jpg); */
+    background-size: cover;
+    /* background-position: center; */
+    width: 574px;
+    height: 192px;
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: 22px;
+    position: relative;
+}
+main>.con4>.inner>.news>.right>.bt p:first-child{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    text-align: left;
+    letter-spacing: 0.6px;
+    line-height: 38px;
+}
+main>.con4>.inner>.news>.right>.bt p:last-child{
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+}
+main>.con4>.inner>.news>.right>.bt p:last-child>a{
+    color: white;
+}
+main>.con4>.inner>.news>.right>.bt p:last-child>a::after{
+    content: url(../day09/image_lotteworld/mainCon3_banner_icon.png);
+    margin: 10px;
+}
+
+main{
+    position: relative;
+}
+main>.top{
+    background-image: url(../day09/image_lotteworld/top_btn.png);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+}
+
+footer{
+    /* background-color: yellow; */
+    border-top: 1px solid rgba(85, 85, 85, 0.37);
+}
+footer>.inner{
+    height: 320px;
+    padding: 50px 0;
+    /* background-color: rgb(138, 40, 92); */
+}
+footer>.inner>ul{
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(85, 85, 85, 0.37);
+}
+footer>.inner>ul>li{
+    padding: 10px 20px 30px 0;
+}
+footer>.inner>ul>li>a{
+    color: gray;
+}
+footer>.inner>ul>li .red{
+    color: rgba(226, 1, 1, 0.829);
+}
+footer>.inner>.footerBt{
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+footer>.inner>.footerBt .t{
+    margin: 10px 0;
+    color: gray;
+}
+footer>.inner>.footerBt .t>span{
+    padding: 10px 0;
+    padding-right: 20px;
+    position: relative;
+    font-size: 15px;
+}
+footer>.inner>.footerBt .c{
+    margin: 40px 0;
+    font-size: small;
+    color: gray;
+}
+footer>.inner>.footerBt>.right>select{
+    width: 210px;
+    height: 45px;
+    padding-left: 20px;
+    color: gray;
+    border: 1px solid rgba(85, 85, 85, 0.37);
+    appearance: none;
+    background-image: url(../day09/image_lotteworld/sel_icon.png);
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    font-size: 14px;
+}
+
+
+.before2::before{
+    content: " ";
+    background-color: rgba(105, 105, 105, 0.473);
+    width: 1px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    margin-top: -6.5px;
+}
+
+
+/* before 조정 필요 */
+/* top 스크롤 움직임 조정 */
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        문제 출제 (버튼 : 구구단 랜덤으로 출제(배열 등에 저장))
+        1. 5 * 4 = input(정답적기)
+        2. 5 * 4 = input(정답적기)
+        3. 5 * 4 = input(정답적기)
+        .
+        .
+        .
+        정답 확인(버튼 )
+        h1 tag : 결과 출력(정답 개수 : n 개 / 정답률 : nn %)
+     -->
+    
+    <h1>
+        <button type="button" id="startBtn">문제 출제</button>
+    </h1>
+    <ol id="q">
+     </ol>
+    <h1>
+        <button type="button" id="compareBtn">정답 확인</button>
+    </h1>
+    <h3 id="printRatio"></h3>
+
+
+    <script>
+        
+        const ansObj = {};
+        let str='';
+        let str2='';
+        let cnt=0;
+        let l=0;
+        const quizArea = document.getElementById('q');
+
+        document.getElementById('startBtn').addEventListener('click',()=>{
+            quizArea.innerHTML='';      // 지난 문제 제거
+            for(let i=1; i<=10; i++){
+                let dan = Math.floor(Math.random()*9)+1;
+                let incre = Math.floor(Math.random()*9)+1;
+                ansObj[`ans${i}`] = dan * incre;
+                str += ` <li>${dan} * ${incre} = <input type="text" id="ans${i}"></li>`;
+            }
+            console.log(ansObj);
+
+            document.getElementById('q').innerHTML = str;
+        })
+
+        document.getElementById('compareBtn').addEventListener('click',()=>{
+            for(let o in ansObj){
+                l++;
+                let ans = document.getElementById(`ans${l}`);
+                if(ansObj[o]==ans.value){
+                    ans.value += ' [정답]';
+                    cnt++;
+                    ans.style.backgroundColor = 'green';
+                }else{
+                    ans.value += ' [오답]';
+                    ans.style.backgroundColor = 'red';
+
+                }
+            }
+
+            str2 += `정답 개수 : ${cnt} / 정답률 : ${(cnt/10)*100}%`;
+
+            document.getElementById('printRatio').innerHTML = str2;
+        })
+
+
+    </script>
+
+</body>
+</html>

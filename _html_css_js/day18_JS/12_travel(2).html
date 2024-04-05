@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="travel(2).css">
+</head>
+<body>
+    <h1>Travel</h1>
+    <div>
+        <ul>
+            <li id="h">Home</li>
+            <li id="s">Seoul</li>
+            <li id="t">Tokyo</li>
+            <li id="p">Paris</li>
+        </ul>
+    </div>
+    <!-- <div>
+        <input type="text" id="search">
+        <button type="button" id="search2">그림검색</button>
+    </div> -->
+    <img src="..//image/home.jpg" alt="home" id="img">
+
+    <script>
+        const img = document.getElementById('img');
+        document.getElementById('h').onclick=()=>{
+            console.log(img.src);
+            img.src="..//image/home.jpg";
+        }
+        document.getElementById('s').onclick=()=>{
+            console.log(img.src);
+            img.src="..//image/seoul.jpg";
+        }
+        document.getElementById('t').onclick=()=>{
+            console.log(img.src);
+            img.src="..//image/tokyo.jpg";
+        }
+        document.getElementById('p').onclick=()=>{
+            console.log(img.src);
+            img.src="..//image/paris.jpg";
+        }
+
+
+        // onclick 설정(단, 태그 아이디를 이미지명과 동일하게 설정한 경우)
+        function clickCity(e){
+            console.log(e);
+            let idVal = e.id;
+            document.getElementById('cityImg').src= `..//image/${idVal}.jpg`;
+        }
+
+        // 위와 동일
+        // const clickCity = (e)=>{
+        //     console.log(e);
+        //     let idVal = e.id;
+        //     document.getElementById('cityImg').src= `..//image/${idVal}.jpg`;
+        // }
+
+        // document.getElementById('search2').onclick=()=>{
+        //     let sss = document.getElementById('search').value;
+        //     // http://127.0.0.1:5500//image/home.jpg
+        //     // if(sss==)
+        //     location.assign('..//image/seoul.jpg');
+        // }
+
+
+    </script>
+
+</body>
+</html>

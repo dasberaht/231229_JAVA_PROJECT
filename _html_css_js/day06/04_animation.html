@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes jump{
+            from{top: 95%; background-color: dodgerblue;}
+            25%{top:  91%;}
+            50%{top: 95%;}
+            75%{top: 89%;}
+            to{top: 95%;}
+        }
+
+        .hi{
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+            top: 95%;
+            /* bottom: 0%; */
+            animation-name: jump;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="hi">hihihi</div>
+    
+</body>
+</html>

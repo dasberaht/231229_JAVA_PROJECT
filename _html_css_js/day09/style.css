@@ -1,0 +1,447 @@
+
+body{
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    /* font-family: 'NotoSans-Light', '맑은 고딕', 'Malgun Gothic', sans-serif; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-width: 1200px;
+}
+
+header{
+    width: 100%;
+    height: 110px;
+    line-height: 110px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+header>a>img{
+    position: absolute;
+    left: 20%;
+    transform: translateX(-20%);
+}
+header>.menu{
+    width: 500px;
+    height: 50px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    
+}
+header>.menu>ul{
+    width: 500px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+header>.menu>ul>li>a{
+    font-size: 17px;
+    font-weight: 700;
+    color: black;
+}
+header>.loginmenu{
+    width: 270px;
+    height: 30px;
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    transform: translate(-15%, -10%);
+}
+header>.loginmenu>ul{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+header>.loginmenu>ul>li>a{
+    font-size: 14px;
+    color: black
+}
+
+section>div>img{
+    width: 100%;
+}
+
+.con1{
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    position: relative;
+}
+.con1 .cicon{
+    width: 30px;
+    height: 30px;
+    background-image: url(../day09/image_lotteworld/시계icon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+}
+.con1>a{
+    width: 500px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    
+}
+.con1 .fp1{
+    font-weight: 700;
+}
+.con1 .time{
+    font-weight: 700;
+}
+.con1>a>div{
+    width: 220px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.con2{
+    width: 100%;
+    height: 900px;
+    background-image: url(../day09/image_lotteworld/bgimg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.con2>p:first-child{
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 150px;
+}
+.con2>p:nth-child(2){
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.con2>div{
+    width: 1200px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+}
+.con2>div>a{
+    width: 574px;
+    height: 500px;
+    line-height: 80px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.con2>div>a:hover{
+    border: 2px solid white;
+    transition: 1s;
+}
+.con2-img1{
+    width: 574px;
+    height: 420px;
+    background-image: url(../day09/image_lotteworld/상설전시.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.con2-img2{
+    width: 574px;
+    height: 420px;
+    background-image: url(../day09/image_lotteworld/특별전시.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.con3{
+    width: 100%;
+    height: 900px;
+    background-image: url(../day09/image_lotteworld/program-img.jpg);
+}
+.con3>p:first-child{
+    font-size: 35px;
+    text-align: center;
+    padding-top: 120px;
+}
+.con3>p:nth-child(2){
+    font-size: 17px;
+    text-align: center;
+    padding-top: 30px;
+}
+.con3>div{
+    width: 1180px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+.con3>div>a{
+    width: 375px;
+    height: 320px;
+    line-height: 70px;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    background-color: white;
+    
+}
+.con3 .img1{
+    width: 375px;
+    height: 246px;
+    background-image: url(../day09/image_lotteworld/전통문화\,역사교육.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.con3 .img2{
+    width: 375px;
+    height: 246px;
+    background-image: url(../day09/image_lotteworld/전통공예체험.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.con3 .img3{
+    width: 375px;
+    height: 246px;
+    background-image: url(../day09/image_lotteworld/문화행사.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.con3>div>a:hover{
+    background-color: #1c7c57;
+    color: white;
+    box-shadow: 30px 30px 30px rgba(92, 92, 92, 0.329);
+    transition: 0.3s;
+}
+
+
+
+.con4{
+    width: 100%;
+    height: 700px;
+}
+.con4>p:first-child{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 120px;
+}
+.con4>p:nth-child(2){
+    font-size: 17px;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.con4-box{
+    width: 1100px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    /* padding: 50px; */
+    /* box-sizing: border-box; */
+}
+.con4-box .con4-box1{
+    width: 500px;
+    height: 380px;
+    border: 1px solid rgba(134, 134, 134, 0.411);
+    padding: 40px;
+    box-sizing: border-box;
+}
+.con4-box .box1-1{
+    width: 420px;
+    height: 50px;
+    position: relative;
+}
+.con4-box .box1-1>p{
+    font-size: 23px;
+    font-weight: 700;
+    float: left;
+}
+.con4-box .box1-1>a{
+    font-size: 15px;
+    color: rgb(134, 134, 134);
+    position: absolute;
+    top: 5%;
+    right: 8%;
+}
+.con4-box .moreicon{
+    width: 20px;
+    height: 20px;
+    background-image: url(../day09/image_lotteworld/더보기icon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0%;
+}
+
+
+
+.con4-box .box1-2{
+    width: 420px;
+    height: 130px;
+    border-bottom: 1px solid rgb(134, 134, 134);
+    margin-bottom: 30px;
+}
+.con4-box .box1-2>a{
+    display: block;
+    width: 420px;
+    height: 110px;
+}
+.con4-box .box1-2>a>p{
+    width: 420px;
+    height: 20px;
+    font-size: 20px;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 70px;
+}
+.con4-box .box1-2>a>span{
+    font-size: 15px;
+    color: rgb(134, 134, 134);
+}
+.con4-box ul{
+    width: 420px;
+    height: 100px;
+}
+.con4-box ul>li{
+    margin: 20px 0;
+}
+.con4-box ul>li>a{
+    width: 350px;
+    font-size: 13px;
+    color: rgba(134, 134, 134, 0.281);
+    display: inline-block;
+}
+.con4-box ul>li>a>p{
+    width: 350px;
+    height: 15px;
+    color: rgb(134, 134, 134);
+    /* text-wrap: wrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.con4-box ul>li>span{
+    font-size: 13px;
+    float: right;
+    color: rgb(134, 134, 134);
+}
+
+
+.con4-box .con4-box2{
+    width: 500px;
+    height: 380px;
+    box-sizing: border-box;
+}
+.con4-box .box2-1{
+    width: 245px;
+    height: 180px;
+    float: left;
+    text-align: center;
+    border: 1px solid rgba(134, 134, 134, 0.411);
+    position: relative;
+    float: left;
+}
+.con4-box .box2-1>a{
+    width: 100%;
+    height: 100%;
+}
+.con4-box .box2-1>a>div{
+    width: 63px;
+    height: 82px;
+    background-image: url(../day09/image_lotteworld/이용문의icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.con4-box .box2-1>a>p{
+    color: black;
+    font-weight: 700;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.con4-box .box2-2{
+    width: 245px;
+    height: 180px;
+    float: left;
+    text-align: center;
+    border: 1px solid rgba(134, 134, 134, 0.411);
+    position: relative;
+    float: right;
+}
+.con4-box .box2-2>a{
+    width: 100%;
+    height: 100%;
+}
+.con4-box .box2-2>a>div{
+    width: 63px;
+    height: 82px;
+    background-image: url(../day09/image_lotteworld/이용문의icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.con4-box .box2-2>a>p{
+    color: black;
+    font-weight: 700;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.con4-box .t-mar{
+    width: 100%;
+    height: 192px;
+    background-image: url(../day09/image_lotteworld/전통혼례.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 190px;
+    padding: 50px;
+    box-sizing: border-box;
+}
+.con4-box .t-mar>p{
+    width: 55%;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.con4-box .t-mar>a{
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.footer{
+    width: 100%;
+    height: 400px;
+}
+
+
+
+
+
+
+

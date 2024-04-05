@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @keyframes move{
+            from{
+                left: 10%
+            }
+
+            50%{
+                left: 80%;
+                background-color: white;
+            }
+
+            to{
+                left: 10%;
+
+            }
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: darkolivegreen;
+            position: absolute;
+            left: 10%;
+            top: 10px;
+            animation-name: move;
+            animation-duration: 3s;
+            animation-iteration-count: 2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

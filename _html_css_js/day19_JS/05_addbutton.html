@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button type="button" id="elementBtn">엘리먼트 만들기</button>
+    <div id="contain"></div>
+    <script>
+        // 엘리먼트 만들기
+        // 생성된 버튼
+        // '생성된 버튼 클릭' 문구 출력
+
+        document.getElementById('elementBtn').addEventListener('click', ()=>{
+            let newBtn =`<button type="button" id="newBtn">생성된 버튼</button>`;
+            document.getElementById('contain').innerHTML = newBtn;
+            // 이 위치에서는 newBtn 인식
+        })
+        
+        // 이 위치에서는 newBtn 인식불가
+        // 동적으로 생성된 엘리먼트에 이벤트 부여
+        // 문서 전체에 리스너를 장착 > 엘리먼트 선택
+        document.addEventListener('click', (e)=>{
+            if(e.target.id=='newBtn'){
+                document.getElementById('contain').innerHTML += `<h1>생성된 버튼 클릭</h1>`;
+            }
+        })
+
+        // 4/2까지 완성
+        // 필수화면 : 회원가입 / 로그인 / 게시판(작성된 글 목록) / 글쓰기 / 메인화면 / 상세페이지(5개 이상) - 총 10페이지 내외 
+        // + project ppt 제작
+        // 로컬스토리지 : https://adjh54.tistory.com/56
+        // 폰트 / 컬러 / 폴더명,파일명 / 레이아웃 규칙
+        // 카카오오븐 https://ovenapp.io/
+        // 피그마 https://designcompass.org/courses/figma-for-beginner/lesson/%ED%94%BC%EA%B7%B8%EB%A7%88-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/
+        // 플레이그라운드
+
+    </script>
+</body>
+</html>

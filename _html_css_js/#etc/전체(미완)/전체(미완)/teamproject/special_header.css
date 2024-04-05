@@ -1,0 +1,8 @@
+/* 기본 스타일 */
+ body { margin: 0; padding: 0; font-family: Arial, sans-serif; } 
+
+ .header { background-color: #3A2416; color: #fff; padding: 20px; transition: all 0.3s; } 
+
+ .header.fixed { position: fixed; top: 0; left: 0; width: 100%; } 
+
+ .header.shrink { height: 60px; padding: 10px; } 

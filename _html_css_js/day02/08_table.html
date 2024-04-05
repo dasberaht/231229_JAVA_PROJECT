@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        table
+        > 표를 나타내는 기능
+            1) table : 표 전체 박스
+            2) tr : 행(한 행)
+            3) th : 열(한 칸) / 제목 열(가운데 정렬, 굵은 글씨)
+            4) td : 열(한 칸) / 일반 열(왼쪽 정렬, 일반 글씨)
+            ex. 3행 4열 테이블 생성 시
+                tr * 3  /  td 3줄 * 4칸 > 12
+
+            *보통 표의 모양은 css에서 지정
+            5) border : 테두리 두깨
+            6) bordercolor : 테두리 색
+            7) width : 가로길이 (숫자만 사용 시 픽셀수정 / % 사용 시 화면대비 변화하도록 설정)
+            8) colspan / rowspan : 셀 병합(단, 병합 시 다음 칸이 밀리므로 제거해 정리할 수 있다.)
+            9) thead(제목)/ tbody(본문) / tfoot(합계,소계 등)
+                *<caption>제목</caption>
+
+     -->
+
+     <table border="1">
+         <tr>
+            <td width="100">첫째 칸</td>
+            <td>둘째 칸</td>
+            <td colspan="2">셋째 칸</td>
+            
+         </tr>
+         <tr>
+            <td>첫째 칸</td>
+            <td>둘째 칸</td>
+            <td>셋째 칸</td>
+            <td rowspan="2">넷째 칸</td>
+         </tr>
+         <tr>
+            <td>첫째 칸</td>
+            <td>둘째 칸</td>
+            <td>셋째 칸</td>
+
+         </tr>
+     </table>
+
+
+     <br>
+     <hr>
+
+     <table border="1" width="100%">
+        <caption>제목</caption>
+        <thead>
+            <tr>
+                <th>제목열1</th>
+                <th>제목열2</th>
+                <th>제목열3</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        <tfoot>
+            <tr>
+                <td>풋터1</td>
+                <td>풋터2</td>
+                <td>풋터3</td>
+            </tr>
+        </tfoot>
+     </table>
+
+
+</body>
+</html>

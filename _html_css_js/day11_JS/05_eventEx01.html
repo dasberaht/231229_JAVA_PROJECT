@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <!-- 
+        성적확인
+        이름 : 홍길동
+        국어 : 80       *점수는 input으로 입력 받기
+        영어 : 90
+        수학 : 80
+        성적계산 버튼
+        -----------------------
+        이름 : 홍길동
+        국어 : 80
+        영어 : 90
+        수학 : 80
+        합계 : --
+        평균 : --
+     -->
+
+     <form action="">
+        <fieldset>
+            <legend>[성적 확인]</legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            영어 : <input type="text" id="eng"><br>
+            수학 : <input type="text" id="math"><br><br>
+            <button type="button" onclick="point()">성적 계산</button>
+        </fieldset>
+     </form>
+     <ol id="pointprint"></ol>
+     
+     <ul id="ul"></ul>
+
+     <script>
+         
+         
+         function point(){
+             let name = document.getElementById('name').value;
+             let kor = document.getElementById('kor').value;
+             let eng = document.getElementById('eng').value;
+             let math = document.getElementById('math').value;
+
+             let sum = Number(kor)+Number(eng)+Number(math);
+             let avg = Math.round(sum / 3).toFixed(2);     // 정수로 반올림
+             // toFixed(2) : 소수점 자리 표현
+
+
+             let ul = document.getElementById('ul');
+
+             let str = `<li>name : ${name} </li>`;
+             str += `<li>kor : ${kor} </li>`;
+             str += `<li>eng : ${eng} </li>`;
+             str += `<li>math : ${math} </li>`;
+             str += `<li>sum : ${sum} </li>`;
+             str += `<li>avg : ${avg} </li>`;
+
+             ul.innerHTML = str;
+            };
+            
+                    // let name = document.getElementById('name');
+                    // let kor = document.getElementById('kor');
+                    // let eng = document.getElementById('eng');
+                    // let math = document.getElementById('math');
+            
+        // function point(){
+            
+        //     let korval = Number(kor.value);
+        //     let engval = Number(eng.value);
+        //     let mathval = Number(math.value);
+
+        //     // let sum = (korval + engval + mathval);
+        //     let avg = (sum/3);
+            
+        //     let pointcalc = `<li style="list-style: none"> 이름 : ${name.value} 점</li>`;
+        //     pointcalc += `<li style="list-style: none"> 국어 : ${kor.value} 점</li>`;
+        //     pointcalc += `<li style="list-style: none"> 영어 : ${eng.value} 점</li>`;
+        //     pointcalc += `<li style="list-style: none"> 수학 : ${math.value} 점</li>`;
+        //     pointcalc += `<li style="list-style: none"> 합계 : ${sum(korval, engval, mathval)} 점</li>`;
+        //     pointcalc += `<li style="list-style: none"> 평균 : ${avg} 점</li>`;
+            
+
+        //     pointprint.innerHTML = pointcalc;
+            
+        // };
+
+        // function sum(a, b ,c) {
+        //     return a+b+c;
+        // }
+
+     </script>
+
+
+
+</body>
+</html>

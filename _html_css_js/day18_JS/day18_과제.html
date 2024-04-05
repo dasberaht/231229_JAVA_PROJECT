@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>컴퓨터가 숫자 0~9까지 중복되지않는 정수 3개를 랜덤으로 출제, 맞추는 게임</h1>
+    <ul>
+        <li>세 자리의 숫자는 중복되면 안된다(각 숫자는 자리수를 갖고 있음).</li>
+        <li>각 자리수와 입력한 숫자가 일치하면 1Strike</li>
+        <li>숫자만 포함되어 있으면 1Ball</li>
+        <li>숫자가 전혀 없으면 1Out</li>
+        <li>3Strike면 게임 종료.</li>
+    </ul>
+
+    <br>
+    <hr>
+    <br>
+
+    <button id="start">게임 시작</button>
+
+    <!-- 컴퓨터 숫자 결정 or 똑같은 숫자를 넣거나, 3자리가 넘는 숫자이거나, 아무것도 입력 안할 경우 > 유효하지 않은 숫자입니다. 출력 -->
+    <h1 id="print1"></h1>
+    숫자입력 : <input type="text" id="player">
+    <button id="resultBtn">게임 확인</button>
+    <ul id="result"></ul>
+
+
+    <script>
+
+        const comSet = new Set();
+        let cnt = 0;
+        const comArr = [];
+        const compareSet = new Set();   // input 값 비교 set
+        let st = 0;
+        let b = 0;
+        // let o =0;
+        let comstr = '';
+        let restr = '';
+        
+        // 컴퓨터 랜덤값 생성
+        document.getElementById('start').onclick=()=>{
+            while(comSet.size<3){
+                let com = Math.floor(Math.random()*9)+1;
+                comSet.add(com);
+                console.log(comSet);
+            }
+            // com 랜덤값 배열로 변경
+            comSet.values().forEach(function(v){
+                console.log(v);
+                comArr.push(v);
+            });            
+            // console.log(comArr);
+            comstr = `컴퓨터가 숫자를 결정했습니다.`;
+            document.getElementById('print1').innerHTML = comstr;
+        }
+
+
+        // 정답확인
+        document.getElementById('resultBtn').onclick=()=>{
+            let player = document.getElementById('player').value;
+            // player 숫자 배열에 넣기 split
+            let playerArr = player.split(',');
+            console.log(playerArr);
+
+            // compareSet 으로 input 값 설정
+            for(let a of playerArr){
+                // console.log(a);
+                // player 배열 값 number로 설정
+                compareSet.add(Number(a));
+            }
+            console.log(compareSet);
+
+            // 똑같은 숫자를 넣거나, 3자리가 넘는 숫자이거나, 아무것도 입력 안할 경우 > 유효하지 않은 숫자입니다. 출력
+            if(player=='' || compareSet.size>3){
+                document.getElementById('print1').innerHTML = `유효하지 않은 숫자입니다.`;
+                // player 값 초기화
+                compareSet.clear();
+                return;
+            }else{
+                for(let i=0; i<comArr.length; i++){
+                    if(comArr[i]==playerArr[i]){
+                        st++;
+                        console.log(comArr[i] + ":" + playerArr[i]);
+                    }
+                }
+                for(let c of comArr){
+                    for(let d of playerArr){
+                        if(c==d){
+                            b++;
+                        }
+                    }
+                }
+                restr += `<li>${playerArr[0]}, ${playerArr[1]}, ${playerArr[2]}  :  ${st} STRIKE, ${b} BALL</li>`;
+            }
+            document.getElementById('result').innerHTML += restr;
+        }
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        button + / - 2개
+        + > 값이 1씩 증가
+        - > 값이 1씩 감소(값이 0이면 감소X)
+     -->
+
+    <h1 id="number"></h1>
+    <div>
+        <button type="button" id="incre">+</button>
+        <button type="button" id="decre">-</button>
+    </div>
+
+    <script>
+        
+        const number = document.getElementById('number');
+        const incre = document.getElementById('incre');
+        const decre = document.getElementById('decre');
+
+        incre.addEventListener('click', ()=>{
+            let currval = Number(number.innerText);
+            number.innerText = currval + 1;
+        })
+        decre.addEventListener('click', ()=>{
+            let currval = Number(number.innerText);
+            if(currval<=0){
+                number.innerText = 0;
+            }else{
+                number.innerText = currval - 1;
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // let num=0;
+        // let str='';
+
+        // document.getElementById('incre').addEventListener('click', () => {
+        //     num += 1;
+        // })
+        // document.getElementById('decre').addEventListener('click', () => {
+        //     if(num>0){
+        //         num -= 1;
+        //     };
+        // })
+        
+        // str += `${num}`;
+        // document.getElementById('number').innerHTML = str;
+        
+    </script>
+
+
+</body>
+</html>

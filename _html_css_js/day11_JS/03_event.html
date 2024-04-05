@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s{
+            background-color: darkolivegreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>event <br>
+        이벤트 객체는 전역객체로써 모든 태그에 객체를 참조시킬 수 있다.</h1>
+    <ul id="ul1" class="uls">
+        <li>a tag / button tag에 이벤트를 주로 참조시켜 사용
+            일반적으로 '클릭에 대한 반응을 기대할 수 있게 만듦'
+        </li>
+        <li>*a tag는 href속성에 의해 자체이동(동기화)방식이 구현되어 있어, 별도의 이동을 막는 코드가 필요</li>
+        <li>객체에 이벤트를 부여하는 방식이 크게 3가지(각각 목적과 작동방식이 다름)</li>
+    </ul>
+    <ul id="ul2" class="uls">
+        <li>화면의 출력 영역을 document영역(객체로 인식) 라고 한다.('*DOM영역')</li>
+        <li>tag는 html 'element', 속성 'attribute', 일반텍스트 'textNode'라고 한다.</li>
+        <li>html로 출력하기 : innerHTML property 사용</li>
+        <li>text로 출력하기 : innerText property 사용</li>
+        <li>1) html element를 가져올 때, (일반적으로)id값으로 가져오는 방법
+                getElementByID('idName')
+        </li>
+        <li>2) html element를 가져올 때, class로 가져오는 방법
+                querySelector('selector') => #, . 선택자 가능
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <button type="button" onclick="eventFunc()">try click</button>
+    <button type="button" onclick="eventFunc2('(버튼2입니다.)')">try click</button>
+    <button type="button" id="btn">try click</button>
+    <button type="button" id="btn2">test</button>
+
+    <h1 id="printResult">
+        <!-- 결과 출력 elememt -->
+    </h1>
+    <h1 id="printr">
+        <!-- test 결과출력 -->
+    </h1>
+
+    <script>
+        // addEventListener는 여러개의 이벤트를 등록 가능
+        document.getElementById('btn2').addEventListener('click',()=>{
+            let printr = document.getElementById('printr');
+            console.log(printr);
+            printr.innerText="test button을 클릭하셨습니다.";
+        });
+        
+        // onclick은 하나의 이벤트만 등록 가능
+        let printResult = document.getElementById('printResult');
+        let btn2 = document.getElementById('btn2');
+        btn2.onclick = function(){
+            alert("hi");
+        }
+
+
+        document.getElementById('btn').addEventListener('click',()=>{
+            // 이벤트 내용
+            alert('세번째 버튼을 클릭했습니다.');                   // 브라우저 안내문구 창 : alert
+        });
+
+        function eventFunc(){
+            // html element 가져오기
+            let printResult = document.getElementById('printResult');
+            console.log(printResult);
+            printResult.innerText='첫번째 버튼을 클릭하셨습니다.';
+        }
+
+        function eventFunc2(param1){
+            let printResult = document.getElementById('printResult');
+            console.log(printResult);
+            printResult.innerHTML=`<span class="s" style="color:darkblue">${param1} span tag를  사용했습니다.</span>`;     // 구문에서 style 직접 설정할 경우
+        }
+
+        const ul = document.querySelectorAll('.uls');   // 배열로 모든 클래스의 값이 들어간다.
+        console.log(ul);    // 해당 클래스의 상세 속성확인 가능
+        console.log(ul[0]);
+    </script>
+</body>
+</html>

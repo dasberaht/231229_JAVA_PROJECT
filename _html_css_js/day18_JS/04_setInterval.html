@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h3{
+            color: white;
+            background-color: brown;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <a href="05_location.html">05_location.html</a>
+
+    <h1>
+        setInterval(callback function, interval duration);  >  duration을 주기적으로 callback function을 호출
+    </h1>
+    <h3 id="h3">
+        setInterval
+    </h3>
+    <button type="button" id="start">start</button>
+    <button type="button" id="end">end</button>
+
+    <script>
+        let intervalObj;
+
+        function flashColor(){
+            intervalObj = setInterval(cgcolor, 500);
+        }
+        
+        function cgcolor(){
+            let h3 = document.getElementById('h3');
+            h3.style.color=(h3.style.color == 'white' ? 'black' : 'white');
+            h3.style.backgroundColor=(h3.style.backgroundColor == 'brown' ? 'yellow' : 'brown');
+        }
+
+        function stopcolor(){
+            clearInterval(intervalObj);     // 할당받은 객체 중지(시작 후 실행되기 전 실행되면 중지)
+        }
+
+        document.getElementById('start').addEventListener('click', flashColor);
+        document.getElementById('end').addEventListener('click', stopcolor);
+
+
+
+    </script>
+
+</body>
+</html>

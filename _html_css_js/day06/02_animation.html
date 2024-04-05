@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        # animation(애니메이션)
+        1. 애니메이션 등록 : @keyframes
+            > 시간비율 0 ~ 100%(0% = from / 100% = to)
+              ex)
+              @keyframes 애니메이션명{
+                시간비율{
+                    스타일;
+                }
+                시간비율{
+                    스타일;
+                }
+              }
+        2. 애니메이션 적용
+            > animation-name : 동작할 애니메이션명
+            > animation-duration : 동작 시간
+            > animation-iteration-count : 동작 횟수 or 무한 동작(infinite)
+
+            ex) 한번에 구문 넣는 방법 : animation: translate 2s 2;
+        
+        <참고>
+        https://developer.mozilla.org/ko/docs/Web/CSS/CSS_animations/Using_CSS_animations
+            
+     -->
+
+    <style>
+        @keyframes scaleFont{
+            0%{
+                font-size: 20px;
+                color: black;
+            }
+            50%{
+                font-size: 50px;
+                color: blue;
+            }
+            to{
+                font-size: 20px;
+                color: black;
+            }
+        }
+
+        .ani{
+            font-size: 20px;
+            animation-name: scaleFont;
+            animation-duration: 3s;
+            animation-iteration-count: 3;
+        }
+    </style>
+
+</head>
+<body>
+
+     <!-- *주로 글자는 span 사용 -->
+     <span class="ani">animation</span>
+
+</body>
+</html>

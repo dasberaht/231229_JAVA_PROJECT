@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        6개 div
+        1) 로고
+        2) 1200px
+        3) 글자
+        4) viewmore 선택
+        5) 그림
+        6) 그림
+
+        최소 
+        중간 800
+        최대 1200
+     -->
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .logo{
+            width: 100%;
+            height: 100px;
+            background-color: beige;
+            padding-left: 3%;
+            line-height: 100px;
+            font-size: 25px;
+            font-weight: 700;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .img1{
+            float: left;
+            width: 50%;
+            height: 1000px;
+            background-image: url(../image/home.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .logoimg{
+                margin-left: 50px;   
+            }
+        .text{
+            float: left;
+            width: 50%;
+            height: 500px;
+            background-color: white;
+            padding-top: 3%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            box-sizing: border-box;
+            overflow: scroll;
+        }
+        h3, h4, h5{
+            margin: 30px 30px 30px 30px;
+        }
+        .img2{
+            float: left;
+            width: 25%;
+            height: 500px;
+            background-image: url(../image/seoul.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .button{
+            float: right;
+            width: 25%;
+            height: 250px;
+            background-color: tomato;
+            background-image: url(../image/tokyo.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            line-height: 250px;
+            text-align: center;
+        }
+        .viewmore{
+            width: 50%;
+            height: 25%;
+            border: 7px solid white;
+            background: none;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .img3{
+            float: right;
+            width: 25%;
+            height: 250px;
+            background-image: url(../image/paris.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        @media screen and (max-width:800px) {
+            .logo{
+                width: 100%;
+                height: 100px;
+                background-color: beige;
+                padding-left: 3%;
+                line-height: 100px;
+                font-size: 25px;
+                font-weight: 700;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            .logoimg{
+                margin-left: 50px;   
+            }
+            .img1{
+                /* float: left; */
+                /* width: 50%; */
+                width: 100%;
+                height: 1000px;
+                background-image: url(../image/home.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .text{
+                float: left;
+                width: 100%;
+                height: 500px;
+                background-color: white;
+                padding-top: 3%;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                box-sizing: border-box;
+                overflow: scroll;
+            }
+            h3, h4, h5{
+                margin: 30px 30px 30px 30px;
+            }
+            .img2{
+                float: left;
+                width: 50%;
+                height: 500px;
+                background-image: url(../image/seoul.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .button{
+                float: right;
+                width: 50%;
+                height: 250px;
+                background-color: tomato;
+                background-image: url(../image/tokyo.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                line-height: 250px;
+                text-align: center;
+            }
+            .viewmore{
+                width: 50%;
+                height: 25%;
+                border: 7px solid white;
+                background: none;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .img3{
+                float: right;
+                width: 50%;
+                height: 250px;
+                background-image: url(../image/paris.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="logo"><div class="logoimg">IN'O</div></div>
+    <div class="img1"></div>
+    <div class="text">
+     <h4>Protfolio</h4>
+     <h3>Make Hardware Soft</h3>
+     <h5>aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+     felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
+     eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+     Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam
+     rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque
+     sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt
+     tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+     faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat,
+     leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend
+     rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque
+     sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt
+     tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+     tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+     tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+     faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat,
+     faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat,
+     faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat,
+     leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend
+     sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras
+     ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+     dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</h5>
+    </div>
+    <div class="button"><button class="viewmore">VIEW MORE</button></div>
+    <div class="img2"></div>
+    <div class="img3"></div>
+</body>
+</html>

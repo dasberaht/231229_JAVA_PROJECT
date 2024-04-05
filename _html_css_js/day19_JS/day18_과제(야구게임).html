@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>컴퓨터가 숫자 0~9까지 중복되지않는 정수 3개를 랜덤으로 출제하고, 이를 플레이어가 맞추는 게임</h1>
+    <ul>
+        <li>세 자리의 숫자는 중복불가(각 숫자 자리수 존재)</li>
+        <li>각 자리수와 입력한 숫자가 일치하면 1Strike</li>
+        <li>숫자만 포함되어 있으면 1Ball</li>
+        <li>숫자가 전혀 없으면 1Out</li>
+        <li>3Strike면 게임 종료</li>
+    </ul>
+    <hr>
+    <button id="startBtn">게임 시작</button>
+    <h1 id="comMsg"></h1>
+    숫자 입력 : <input type="text" id="myNum">
+    <button id="tryBtn">게임 확인</button>
+    <ol id="tries"></ol>
+
+    <script>
+        const comSet = new Set();
+        console.log(comSet);
+        let comNums = [];
+        let count = 0;
+        const comMsg = document.getElementById('comMsg');
+        const tries = document.getElementById('tries');
+
+        document.getElementById('startBtn').addEventListener('click', makeGame);
+        document.getElementById('tryBtn').addEventListener('click', compareNum);
+
+
+        // 게임 확인 기능
+        function compareNum(){
+            if(comSet.size<=0){
+                comMsg.innerText = '게임 시작 후 실행하세요.';
+                return;     // 함수 종료
+            }
+            count++;
+            let myNumVal = document.getElementById('myNum');    // input 값
+            // 유효성 검증 validMyNum() 사용
+            if(validMyNum(myNumVal.value)){
+                console.log('valid 통과');
+                let myNums = myNumVal.value.split("");          // input값들을 배열로 생성
+                console.log(myNums);
+
+                let strike =0, ball = 0;
+
+                // 컴퓨터 기준 숫자
+                for(let i=0; i<comNums.length; i++){
+                    // 내 숫자 기준
+                    for(let j=0; j<myNums.length; j++){
+                        if(comNums[i] == myNums[j]){      // 컴퓨터 숫자하나와 플레이어 숫자 3개 비교
+                            if(i==j){       // 자리도 같은지 조건 확인
+                                strike++;
+                            }else{
+                                ball++;
+                            }
+                            break;      // 해당 구문을 벗어나서 바로 앞 구문으로 돌아감
+                        }
+                    }
+                }
+                if(strike == 0 && ball == 0){
+                    tries.innerHTML += `<li>${myNums} > Out!</li>`;
+                }else{
+                    if(strike==3){
+                        tries.innerHTML += `<li>${myNums} > Success!</li>`;
+                    }else{
+                        tries.innerHTML += `<li>${myNums} > ${strike}Strike, ${ball}Ball</li>`;
+                    }
+                }
+            }else{
+                console.log('valid 통과X');
+                comMsg.innerText = '유효하지 않은 숫자입니다.';
+
+            }
+            myNumVal.value='';
+            myNumVal.focus();
+        }
+
+        // 게임 시작 기능
+        function makeGame(){
+            // 기존 값 초기화
+            comNums = [];
+            comSet.clear();
+            // 이전 게임 내역을 초기화
+            tries.innerText = '';
+
+            //컴퓨터 랜덤값 생성 후 set에 저장
+            do{
+                let rNum = Math.floor(Math.random()*10);
+                comSet.add(rNum);
+            }while(comSet.size<3);
+            console.log(comSet);
+
+            // set을 배열로 저장
+            comSet.forEach((v)=>{
+                comNums.push(v);
+            });
+            console.log(comNums);
+            comMsg.innerText = `컴퓨터가 숫자를 결정하였습니다.`;
+
+        }
+
+     
+        // '123' > 숫자로 인지 / '문자' > 문자로 인지
+        // console.log(isNaN('123'));      // 숫자가 아닌것이 맞는지 확인 isNaN
+        // 비교 확인
+        // 숫자만 가능, 숫자 3자리, 중복 불가
+        function validMyNum(myNum){
+            if(myNum.length != 3){
+                return false;
+            }else if(isNaN(myNum)){
+                return false;
+            }else if(new Set(myNum.split("")).size != 3){       // "" : 글자 하나씩 구분
+                return false;
+            }else{
+                return true;
+            }
+        }
+        // console.log(validMyNum('112'));     // 조건 비교 확인
+       
+
+
+
+
+                // a: for(let i=0; i<comNums.length; i++){                  // for문 앞에 이름을 설정할 경우 구문
+                //     // 내 숫자 기준
+                //     for(let j=0; j<myNums.length; j++){
+                //         if(comNums[i] == myNums[j]){      // 컴퓨터 숫자하나와 플레이어 숫자 3개 비교
+                //             if(i==j){       // 자리도 같은지 조건 확인
+                //                 strike++;
+                //             }else{
+                //                 ball++;
+                //             }
+                //             break a;
+                //         }
+                //     }
+                // }
+
+
+    </script>
+</body>
+</html>

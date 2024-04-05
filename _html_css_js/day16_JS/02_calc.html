@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 50px;
+            height: 50px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- *eval() 사용X -->
+    <div class="container">
+        <div class="areatop">
+            <button type="button" value="7" >7</button>
+            <button type="button" value="8" >8</button>
+            <button type="button" value="9" >9</button>
+            <button type="button" value="+" >+</button>
+            <button type="button" value="c" >c</button><br>
+            <button type="button" value="4" >4</button>
+            <button type="button" value="5" >5</button>
+            <button type="button" value="6" >6</button>
+            <button type="button" value="-" >-</button><br>
+            <button type="button" value="1" >1</button>
+            <button type="button" value="2" >2</button>
+            <button type="button" value="3" >3</button>
+            <button type="button" value="*" >*</button><br>
+            <button type="button" value="." >.</button>
+            <button type="button" value="0" >0</button>
+            <button type="button" value="=" >=</button>
+            <button type="button" value="/" >/</button>
+        </div>
+        <h1 id="printResult"></h1>
+    </div>
+
+    <script>
+        const printResult = document.getElementById('printResult');
+        let printValue = '';    // 결과 String
+
+        document.querySelector('.container').addEventListener('click',(e)=> {
+            console.log(e.target.value);
+            let btnValue = e.target.value;
+            // isNaN() : 숫자면 false, 아니면 true(isNull()과 유사)
+            console.log(isNaN(btnValue));
+            if(!isNaN(btnValue)){   // 숫자일 경우 true
+                printValue += btnValue;
+            }else{  // 숫자가 아니면~
+                // 숫자가 아닌 케이스(+ - * / . = c > undefined)
+                if(btnValue != undefined){
+                    switch(btnValue){
+                        case 'c': 
+                            printValue = '';    // 변수 안의 값을 모두 초기화
+                            printResult.innerText = ''; // 이전 결과도 초기화
+                            break;
+                        case '.':
+                            // 기존 값에 붙이기
+                            printValue += btnValue;
+                            break;
+                        default :
+                            let result ='';
+                            if(btnValue=='='){
+                                // 계산하기
+                                result = extractValue(printValue);
+                                printValue = result;                    // 누적할 경우 += 사용
+                                btnValue = '';
+                            }else{
+                                printValue += ` ${btnValue} `;  // 양 옆에 공백
+                            };
+                            break;
+                    }
+                }
+            }
+            printResult.innerText = printValue;
+
+        })
+
+        // 계산식
+        function operation(f, o, l){    // first, operation, last
+            let result = 0;
+            switch(o){
+                case '+': result = f + 1; break;
+                case '-': result = f - 1; break;
+                case '*': result = f * 1; break;
+                case '/': result = f / 1; break;
+                default : break;
+            };
+            return result.toFixed(2);
+        }
+
+        
+        function extractValue(strVal){
+            // substring(시작번지, 끝번지)
+            // substr(시작번지, 개수)
+            
+            let firstNum = strVal.substring(0, strVal.indexOf(" "));
+            let op = strVal.substr(strVal.indexOf(" ")+1, 1);   // 1글자만 가져오기
+            // console.log(strVal);
+            let lastNum = strVal.substring(strVal.lastIndexOf(" ")+1);
+            console.log(firstNum, op, lastNum);
+            return operation(Number(firstNum), Number(op), Number(lastNum));
+        }
+
+
+
+
+
+
+
+
+
+
+
+        // document.addEventListener('click',(e)=>{
+        //     console.log(e.target.value);
+        // });
+        // querySelector('.container') : 선택자(#, . 등)를 사용하여 입력
+        
+        // const re = document.getElementById('printResult');
+        // let fnum = '';
+        // let pnum = '';
+        // let op = '';    //연산자
+        
+        // document.querySelector('.calcbtn').addEventListener('click',(e)=>{
+        //     let val = e.target.value;
+        //     console.log(val);
+            
+        //     switch(val){
+        //         // case 'c' : location.reload(); break;
+        //         case 'c' : re.innerHTML=''; fnum=''; pnum=''; op=''; break;
+        //         case '+' : op = val; re.innerText += val; break;
+        //         case '-' : op = val; re.innerText += val; break;
+        //         case '*' : op = val; re.innerText += val; break;
+        //         case '/' : op = val; re.innerText += val; break;
+        //         case '=' : op = val; re.innerText += val;
+        //             if(op=='+'){val = Number(fnum)+Number(pnum);}
+        //             if(op=='-'){val = Number(fnum)-Number(pnum);}
+        //             if(op=='*'){val = Number(fnum)*Number(pnum);}
+        //             if(op=='/'){val = Number(fnum)/Number(pnum);}
+        //             break;
+        //         default : 
+        //             if(op==op){
+                        
+        //             }else{
+
+        //             }
+        //         break;
+        //     };
+            
+            
+            
+            
+
+        // });
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Element의 CSS 적용
+    </h1>
+    <ul>
+        <li>
+            css 관련 속성은 style. 을 통해 속성(프로퍼티)에 접근 가능(ex. tagName.style.color ...)
+        </li>
+        <li>
+            css 속성(property) 중 font-size > -(하이픈) 과 공백을 지우고 첫 글자를 대문자로 변경하여 사용 (ex. fontSize = ""; 카멜케이스)
+        </li>
+        <li>
+            element.setAttribute(name, value);
+        </li>
+    </ul>
+    <h1 id="h1">색상변경</h1>
+    <input type="text" id="colorValue">
+    <button type="button" id="changeBtn">변경</button>
+
+    <script>
+
+        document.getElementById('changeBtn').onclick=()=>{
+            let h1 = document.getElementById('h1');
+            let colorchoice = document.getElementById('colorValue').value;
+            h1.style.color=colorchoice;
+        }
+
+    </script>
+
+</body>
+</html>

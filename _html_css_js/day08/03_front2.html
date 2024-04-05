@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+
+    <style>
+        /* css 초기화 방법(기본 태그들이 가지고 있는 고유 속성들을 없애주는 코드)
+           : https://keembloo.tistory.com/5
+
+            link 걸기 : <link rel="stylesheet" href="reset.css">
+            또는
+            @import url(reset.css); 
+            
+            위 두가지를 사용하여 적용시킬 수 있다.
+
+
+            *해당 요소를 천천히 작동하도록 설정하는 구문
+             transition: 0.5s;
+
+        */
+        @import url(reset.css);
+
+        
+
+        .container{
+            width: 100%;
+            /* vh, vw : 모니터(브라우저 기준) 높이(vh), 넓이(vw) */
+            height: 100vh;
+            /*  linear-gradient 참고
+                https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
+                https://webty.tistory.com/150   */
+            background: linear-gradient(45deg, rgba(0,0,0,0.2), rgba(0,0,0,6)) ,url(../image/room.jpg);
+            background-size: cover;
+        }
+        .container>.navbar{
+            /* background-color: darkcyan; */
+            width: 90%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        .container>.navbar>h1>a{
+            color: white;
+            font-size: 50px;
+            font-weight: 700;
+        }
+        .container>.navbar>ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        .container>.navbar>ul>li{
+            margin: 0 10px;
+        }
+        .container>.navbar>ul>li>a{
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .container>.navbar>ul>li>a:hover{
+            color: grey;
+        }
+        .container>.main{
+            width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .container>.main>h2{
+            font-size: 70px;
+            font-weight: 700;
+            margin-bottom: 70px;
+        }
+        .container>.main button{
+            border: 6px solid darkolivegreen;
+            font-size: 20px;
+            padding: 30px 60px;
+            border-radius: 10px;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            background: none;
+            transition: 0.5s;
+        }
+        .container>.main button:hover{
+            background-color: darkolivegreen;
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="navbar">
+            <h1><a href="">DESIGN</a></h1>
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">LOGIN</a></li>
+                <li><a href="">SIGNUP</a></li>
+                <li><a href="">BOARD</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <h2><pre>Welcome to
+
+    Front-End World</pre></h2>
+            <a href=""><button>Learn More</button></a>
+        </div>
+
+    </div>
+</body>
+</html>

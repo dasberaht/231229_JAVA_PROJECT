@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘은?</h1>
+    <button type="button" id="btn" onclick="todayinfo()">Today</button>
+    <h3 id="result">
+        <!-- 오늘 날짜와 요일 출력
+             2024. 03. 19.(화)
+        -->
+    </h3>
+
+    <script>
+        // function todayinfo(){
+        //     let today = new Date();
+        //     let todaydate = today.toLocaleDateString();
+        //     // console.log(todaydate);
+        //     let weekday = today.getDay();
+        //     // console.log(weekday);
+            
+        //     switch(weekday){
+        //         case 0 : weekday = " (일)"; break;
+        //         case 1 : weekday = " (월)"; break;
+        //         case 2 : weekday = " (화)"; break;
+        //         case 3 : weekday = " (수)"; break;
+        //         case 4 : weekday = " (목)"; break;
+        //         case 5 : weekday = " (금)"; break;
+        //         case 6 : weekday = " (토)"; break;
+        //         default : weekday = "X"; break;
+        //     };
+
+        //     document.getElementById('result').innerText = todaydate + weekday;
+        // };
+
+        document.getElementById('btn').addEventListener('click', () => {
+            let today = new Date();
+            let todaydate = today.toLocaleDateString();
+            let weekday = today.getDay();
+
+            // switch(weekday){
+                //     case 0 : weekday = " (일)"; break;
+                //     case 1 : weekday = " (월)"; break;
+                //     case 2 : weekday = " (화)"; break;
+                //     case 3 : weekday = " (수)"; break;
+                //     case 4 : weekday = " (목)"; break;
+                //     case 5 : weekday = " (금)"; break;
+                //     case 6 : weekday = " (토)"; break;
+                //     default : weekday = "X"; break;
+            // };
+                
+            if(weekday==0){
+                weekday = " (일)";
+            } else if(weekday==1){
+                weekday = " (월)";
+            } else if(weekday==2){
+                weekday = " (화)";
+            } else if(weekday==3){
+                weekday = " (수)";
+            } else if(weekday==4){
+                weekday = " (목)";
+            } else if(weekday==5){
+                weekday = " (금)";
+            } else if(weekday==6){
+                weekday = " (토)";
+            };
+                
+            document.getElementById('result').innerText = todaydate + weekday;
+        });
+
+        
+
+    </script>
+
+</body>
+</html>

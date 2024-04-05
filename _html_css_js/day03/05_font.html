@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Madimi+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- 
+        # font attribute
+        > font-size : 글자 크기
+        > font-weight : 글자 굵기(100~900; 100단위로 지정하며, 굵게 = 700 정도로 나타냄)
+        > font-family : 글꼴
+            - 지정하려는 폰트를 ,로 나열
+            - 한글 폰트의 경우 한글이름, 영문이름을 같이 지정
+            - 기본폰트, 다른폰트, 기본형
+            - 마지막은 항상 기본형 폰트로 지정
+            - 폰트명은 띄어쓰기 없이 사용
+            - 만약, 폰트명에 띄어쓰기를 지정한다면, " " 묶어서 설정
+            ex) "맑은 고딕", "Malgun Godic", 굴림, Gulim, serif(기본값)
+
+        > google에서 제공하는 폰트확인
+            https://fonts.google.com/
+        
+        > icon 등등 코드 지원
+            https://fontawesome.com/
+            https://getbootstrap.com/
+
+     -->
+
+     <style>
+        .font{
+            font-family: "Hi Melody", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .fontgoogle{
+            font-family: "Madimi One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        }
+
+
+     </style>
+
+</head>
+<body>
+    <span class="material-symbols-outlined">
+        search
+        </span>
+
+    <div class="font">안녕 HELLO</div>
+    <div class="fontgoogle">HELLO hello</div>
+</body>
+</html>

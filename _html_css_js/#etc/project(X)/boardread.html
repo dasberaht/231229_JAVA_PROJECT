@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../project/boardread.css">
+</head>
+<body>
+    <li>
+    <button><div class="read">제목 날짜 등ㅇㅇ</div></button>    
+    <div class="read expanded"></div>
+    <div class="raz"></div>
+    </li>
+</body>
+
+<script>
+
+let today = new Date();
+let day = today.toLocaleDateString();
+
+document.addEventListener('DOMContentLoaded', () => {
+            const storedPost = JSON.parse(localStorage.getItem('post'));
+            console.log(storedPost);
+            if (storedPost) {
+                const boardList = document.querySelector('.boardlist');
+                // count++;
+
+                const readstr = document.querySelector(".expanded");
+
+                readstr.innerHTML += `
+                작성자 : <span>${storedPost.writername}</span>
+                제목 : <span>${storedPost.title}</span>
+                날짜 : <span>${day}</span>
+                내용 : <span>${storedPost.content}</span>
+                `;
+
+
+
+
+
+                // const listItem = document.createElement('li');
+                // listItem.innerHTML += `
+                //     <a href="#">    
+                //         <span class="listnum">${count}</span>
+                //         <span class="boardtitle"id="t${count}">${storedPost.title}</span>
+                //         <span class="day">${day}</span>
+                //         <span class="id">${storedPost.writername}</span>
+                //     </a>
+                //     `;
+
+                // boardList.appendChild(listItem);
+
+            }
+            // document.querySelector('.boardcnt').innerHTML = `총 ${count+5} 건의 게시글이 있습니다.`;
+        });
+
+</script>
+</html>

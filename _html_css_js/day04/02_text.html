@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        # text attribute(텍스트 속성)
+        > text-align : 정렬(left, right, center, justify(양쪽정렬))
+        > text-indent : 들여쓰기
+        > text-decoration : 줄 긋기
+            1) none : 없음
+            2) underline : 밑줄
+            3) overline : 윗줄
+            4) linethrough : 가운데 줄(취소선)
+        > letter-spacing : 글자간 간격
+        > word-spacing : 단어간 간격
+        > line-height : 글자 기준선 여백 높이
+        > text=shadow : 글자그림자
+            - 구문 : 좌측px 우측px 번짐정도px 색상
+            - 중첩효과(멀티가능), 콤마로 계속 이어나갈 수 있다.
+        > white-space : 컨텐츠 감싸기 방법
+            - wrap : 여러 줄을 그대로 두기
+            - nowrap : 한 줄로 처리
+        > overflow : 요소가 넘어가면 어떻게 처리할지 결정
+            - hidden : 넘어간 요소 숨김
+            - scroll : 스크롤 생성
+            - auto : 스크롤을 auto로 생성
+        > text-overflow : 텍스트가 범위를 넘어가는 경우 처리
+            - ellipsis : 넘어가는 범위의 단어를 '...' 처리
+     -->
+
+     <!-- 
+        # CSS 표준 단위
+        > px : 필셀
+        > % : 현재 값을 기준으로 비율(%)을 지정
+        > em : 배수, 부모 값을 기준으로 배수(ex. 10(부모) : 20 30 40)
+        > rem : 배수, 문서의 값을 기준으로 배수
+        > cm/mm/in(inch) : 1 in = 96 px
+        > pt : 포인터, 1 pt = 1/72 in
+        > pc : 피카소, 1 pc = 12 pt
+        > deg : 각도
+      -->
+
+     <style>
+        p{
+            text-indent: 20px;
+            text-align: justify;
+        }
+
+        .line{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        div{
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+
+            /* vertical-align:middle; */
+
+            word-spacing: 30px;
+            letter-spacing: 3px;
+            text-decoration: overline;
+            background-color: blanchedalmond;
+            text-shadow: 5px 5px 2px black;
+            font-weight: bold;
+        }
+
+     </style>
+
+</head>
+<body>
+    <div>HELLO hello HI hi</div>
+    <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cumsociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultriciesnec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictumelis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputateleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,apibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.enean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiamhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem nequeed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tinciduntempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros  faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat,       leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui.
+    </p>
+    
+    <p class="line">
+        Crasultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+        posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor,
+        suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan
+        a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc
+        nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum.
+        Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit
+        risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque.
+        Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non,
+        euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis
+        vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in
+        faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat
+        euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
+        bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque
+        posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin
+        urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis.
+    </p>
+</body>
+</html>

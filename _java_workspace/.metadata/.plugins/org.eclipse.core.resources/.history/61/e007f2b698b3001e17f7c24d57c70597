@@ -1,0 +1,71 @@
+package day09;
+
+import java.util.Scanner;
+
+public class 가위바위보게임 {
+
+	public static void main(String[] args) {
+		/* 가위바위보게임
+		 * 컴퓨터가 가위바위보를 랜덤으로 선택 (가위=0, 바위=1, 보=2)
+		 * 내가 가위바위보 중 하나를 선택해서 입력
+		 * 승 / 패 / 무 결과 출력
+		 * ex) 
+		 * com = 0(가위)
+		 * user = 0(가위)
+		 * -> 무승부 입니다.  
+		 */
+		
+		System.out.println("[가위바위보]");
+		
+		Scanner scan = new Scanner(System.in);
+				
+
+		String random[] = new String[] {"가위", "바위", "보"};
+
+
+
+
+		do { 
+			int com = (int)(Math.random()*2)+0;	
+			System.out.println("가위, 바위, 보 중 하나를 입력하세요.");
+			String user = scan.next();
+			
+			switch(com) {
+			case 0 : 
+				System.out.println("가위");
+				break;
+			case 1 : 
+				System.out.println("바위");
+			case 2 :
+				System.out.println("보");
+			default :
+				System.out.println("잘못된 값 입니다.");
+			}
+			
+		} while();
+		
+		
+		
+//		for(int i=0; i<arr.length; i++) {
+//		while(com<3) {
+//			if(com == user) {
+//				System.out.println("무승부 입니다.");
+//				break;
+//			}
+//			if(com < user) {
+//				System.out.println("승");
+//				break;
+//			}
+//			if(user > com) {
+//				System.out.println("패");
+//				break;
+//			}
+//		}
+//	}
+		
+		
+		scan.close();
+
+	}
+
+}

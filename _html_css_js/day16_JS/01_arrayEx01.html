@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        memberObject = {
+            name:'hong',
+            age:30,
+            married:true,
+            favors:['Baseball', 'Game', 'Movie', 'etc...']
+        };
+
+        const people = [];
+        // people에 memberObject(참조객체)를 5명 복사(주소를 복사한 것)하여 추가
+        for(let i=0; i<5; i++){
+            people.push(memberObject);
+        }
+        console.log(people);
+        
+        // people[1] name을 kim으로 변경
+        people[1].name = 'kim';
+        console.log(people);
+        people[1].age = 20;
+        console.log(people);
+
+        // 객체의 값을 빼서 console에 출력
+        // 배열 순회 > for of:배열에 내용을 탐색할 때, for in:객체의 내용을 탐색할 때
+
+        for(let member of people){
+            // console.log(member);
+            for(let keyname in member){
+                if(keyname!=='favors'){         // if문의 조건으로 출력되는 순서를 결정할 수 있다.
+                    console.log(keyname);
+                    console.log(member[keyname]);
+                }else{
+                    for(let fa of member[keyname]){
+                        console.log(fa);
+                    }
+                }
+            }
+        }
+
+        // *js test : 계산기, to-do리스트 만들기
+    </script>
+</body>
+</html>

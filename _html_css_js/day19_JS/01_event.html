@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>document 영역에서 사용되는 이벤트를 정의</h1>
+    <ul>
+        <li>
+            마우스 이벤트 : click(), focus(), input(), change(), mouseover(), mouseout()
+            (구문 > click을 작성 위치에 바꿔 사용)
+        </li>
+        <li>
+            키보드 이벤트 : keyDown(), keyPress(), keyUp()
+        </li>
+        <li>
+            기타 이벤트 : preventDefault() > 이전에 있는 이벤트 default 처리, target, submit()
+        </li>
+        <li>
+            addEventListener('eventname', callback fucntion);
+            메서드를 사용하여 구현하는 것을 권장
+            이벤트 중복 부여 가능
+        </li>
+    </ul>
+
+    <div class="container">
+        <img src="../image/rock.png" alt="" id="pic">
+    </div>
+
+    <script>
+        // 이미지에 마우스를 올리면 그림을 변경
+        // 마우스가 이미지 영역을 벗어나면 기존 그림으로 변경
+        const pic = document.getElementById('pic');
+        pic.addEventListener('mouseover', ()=>{
+            pic.src='../image/scissors.png';
+        })
+        pic.addEventListener('mouseout', ()=>{
+            pic.src='../image/rock.png';
+        })
+
+
+    </script>
+
+</body>
+</html>

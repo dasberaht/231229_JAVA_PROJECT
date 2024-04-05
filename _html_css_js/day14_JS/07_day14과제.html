@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        button{
+            width: 120px;
+            height: 120px;
+            margin: 20px;
+            border: none;
+        }
+
+        button img{
+            width: 120px;
+            height: 120px;
+            box-shadow: 5px 5px 0px 5px rgba(0, 0, 0, 0.247);
+            border: 0px solid black;
+        };        
+
+    </style>
+</head>
+<body>
+    <div>
+    <button type="button" id="btn1" onclick="game(1)"><img src="../image/scissors.png" alt="가위"></button>
+    <button type="button" id="btn2" onclick="game(2)"><img src="../image/rock.png" alt="바위"></button>
+    <button type="button" id="btn3" onclick="game(3)"><img src="../image/paper.png" alt="보"></button>
+    </div>
+    <h3 id="result"></h3>
+
+    <script>
+
+        let win = 0;
+        let draw = 0;
+        let lose = 0;
+        let cnt=0;
+        let player = 0;
+     
+        // document.getElementById('btn1').addEventListener('click',()=>{
+        //         player = 1;
+        //         game(player);
+        // });
+        // document.getElementById('btn2').addEventListener('click',()=>{
+        //         player = 2;
+        //         game(player);
+        // });
+        // document.getElementById('btn3').addEventListener('click',()=>{
+        //         player = 3;
+        //         game(player);
+        // });
+        
+       
+        function game(player) {
+            
+            let com = Math.floor(Math.random()*3)+1;
+
+            let re;
+            if((player==1 && com==2) || (player==2 && com==3) || (player==3 && com==1)){
+                lose++;
+                re = "Player가 졌습니다.";
+            }else if((player==1 && com==3) || (player==2 && com==1) || (player==3 && com==2)){
+                win++;
+                re = "Player가 이겼습니다.";
+            }else if(player==com){
+                draw++;
+                re = "무승부입니다.";
+            }
+
+            switch(player){
+                case 1 : (com==1) ? draw++ : (com==2) ? lose++ : win++;
+                        player = '가위';
+                    break;
+                case 2 : (com==1) ? win++ : (com==2) ? draw++ : lose++;
+                        player = '바위';
+                    break;
+                case 3 : (com==1) ? lose++ : (com==2) ? win++ : draw++;
+                        player = '보';
+                    break;
+                    default : break;
+            };
+            
+            if(com==1){
+                com ='가위';
+            }else if(com==2){
+                com ='바위';
+            }else if(com==3){
+                com ='보';
+            };
+
+
+            cnt++;
+            // let wrate = (win/(cnt-draw)*100).toFixed(2);
+            let wrate = (win/cnt*100).toFixed(2);
+
+
+            document.getElementById('result').innerHTML = 
+            `[Player ${player}]  VS  [Com ${com}] <br>
+             [${re}] <br>
+            <br>
+            [현재 전적] <br>
+            승: ${win} / 무: ${draw} / 패: ${lose} <br>
+            <br>
+            Player 승률 : ${wrate} %`;
+
+        };
+
+
+
+
+    </script>
+
+</body>
+</html>

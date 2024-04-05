@@ -1,0 +1,79 @@
+/* 기본(최소) 사이즈 */
+body { margin: 0; padding: 0; } 
+.logo { width: 100%; height: 70px; background-color: beige; line-height: 70px; font-size: 25px; font-weight: 700; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; } 
+.logoimg { margin-left: 50px; } 
+.img1 { width: 100%; height: 500px; background-image: url(../image/home.jpg); background-repeat: no-repeat; background-size: 100% 100%; } 
+
+/* 문장영역 수정 */
+.text { padding: 0 30px; width: 100%; height: 500px; background-color: white; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; box-sizing: border-box; overflow: scroll; } 
+h4 { font-size: 16px; color: #4A4A4A; margin-bottom: 10px; } 
+h3 { font-size: 20px; color: #1B1B1B; margin-bottom: 30px; } 
+h5 { font-size: 16px; color: #7A7A7A; } 
+
+.img2 { width: 100%; height: 500px; background-image: url(../image/seoul.jpg); background-repeat: no-repeat; background-size: cover; } 
+.button { width: 100%; height: 250px; background-color: tomato; background-image: url(../image/tokyo.jpg); background-repeat: no-repeat; background-size: cover; line-height: 250px; text-align: center; } 
+
+/* 버튼영역 수정 */
+.viewmore { padding: 9px 40px; width: 250px; height: 25%; border: 7px solid white; background: none; color: white; font-size: 20px; font-weight: bold; cursor: pointer; } 
+
+.img3 { width: 100%; height: 250px; background-image: url(../image/paris.jpg); background-repeat: no-repeat; background-size: cover; } 
+
+
+
+
+
+
+/* 중간(800px) 사이즈 */
+@media screen and (min-width:800px){
+ .logo { width: 100%; height: 70px; background-color: beige; line-height: 70px; font-size: 25px; font-weight: 700; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; } 
+ .logoimg { margin-left: 50px; } 
+ .img1 { width: 100%; height: 800px; background-image: url(../image/home.jpg); background-repeat: no-repeat; background-size: 100% 100%; } 
+ 
+ /* 문장영역 수정 */
+ .text { padding: 0 65px; width: 100%; height: 500px; background-color: white; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; box-sizing: border-box; overflow: scroll; } 
+ 
+ h3, h4, h5 { margin: 30px 30px 30px 30px; } 
+ .img2 { float: left; width: 50%; height: 500px; background-image: url(../image/seoul.jpg); background-repeat: no-repeat; background-size: cover; } 
+ .button { float: right; width: 50%; height: 250px; background-color: tomato; background-image: url(../image/tokyo.jpg); background-repeat: no-repeat; background-size: cover; line-height: 250px; text-align: center; } 
+ 
+ /* 버튼영역 수정 */
+ .viewmore { font-size: 16px; font-weight: bold; color: white; border: 4px solid white; width: 50%; height: 25%; background: none; cursor: pointer; } 
+ 
+ .img3 { float: right; width: 50%; height: 250px; background-image: url(../image/paris.jpg); background-repeat: no-repeat; background-size: cover; } 
+ }
+
+
+
+
+
+/* 최대(1200px) 사이즈 */
+@media screen and (min-width:1200px){
+ .logo { width: 100%; height: 70px; background-color: beige; line-height: 70px; font-size: 25px; font-weight: 700; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; } 
+ .logoimg { margin-left: 50px; } 
+ .img1 { float: left; width: 50%; height: 1000px; background-image: url(../image/home.jpg); background-repeat: no-repeat; background-size: 100% 100%; } 
+
+ /* 문장영역 수정 */
+ .text { padding: 0 65px; float: left; width: 50%; height: 500px; background-color: white; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; box-sizing: border-box; overflow: scroll; } 
+ 
+ h3, h4, h5 { margin: 30px 30px 30px 30px; } 
+ .img2 { float: left; width: 25%; height: 500px; background-image: url(../image/seoul.jpg); background-repeat: no-repeat; background-size: cover; } 
+ .button { float: right; width: 25%; height: 250px; background-color: tomato; background-image: url(../image/tokyo.jpg); background-repeat: no-repeat; background-size: cover; line-height: 250px; text-align: center; } 
+ .viewmore { width: 50%; height: 25%; border: 7px solid white; background: none; color: white; font-size: 20px; font-weight: bold; cursor: pointer; } 
+ .img3 { float: right; width: 25%; height: 250px; background-image: url(../image/paris.jpg); background-repeat: no-repeat; background-size: cover; } 
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

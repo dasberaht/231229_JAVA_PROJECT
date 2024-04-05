@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="">
+        이름 : <input type="text" id="name"> <br>
+        주민번호 : <input type="text" id="birth"> <br>
+        <button type="button" onclick="info()">확인</button>
+    </form>
+    <h3 id="printinfo"></h3>
+
+    <script>
+
+        
+        function info(){
+
+            // 이름
+            let name = document.getElementById('name').value;
+            let birth = document.getElementById('birth').value;
+            
+            // 생년월일
+            let birthday = birth.slice(0, birth.indexOf('-'));
+            // 나이
+            // let today = new Date().toLocaleDateString();
+            // let age = today.slice(2, 4) - (1900 + birthday.slice(0, 2));
+            let birthyear = birth.slice(0, 2);
+            let age = '';
+            if(birthyear.slice(0) === '0'){
+               age = 2024-(Number(birthyear) + 2000);
+            }else{
+               age = 2024-(Number(birthyear) + 1900);
+            };
+
+            // 성별
+            let gender1 = birth.charAt(birth.indexOf('-')+1);
+            let gender = gender1 == 1 || gender1 == 3 ? "남" : "여";
+
+            document.getElementById('printinfo').innerText = 
+            `이름 : ${name}, 생년월일 : ${birthday}, 나이 : ${age}, 성별 : ${gender}`;
+        };
+
+    </script>
+
+</body>
+</html>

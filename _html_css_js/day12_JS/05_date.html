@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>날짜 관련 함수</h1>
+    <ul>
+        <li>new DATE(); : 오늘 날짜 변환</li>
+        <li>getFullYear(); : 연도</li>
+        <li>getMonth()+1; : 월(단, 0부터 시작하므로 +1 필요)</li>
+        <li>getDate(); : 일 1~31</li>
+        <li>getDay(); : 요일 0(일)~6(토)</li>
+        <li>getHours(), getMinutes(), getSeconds() : 시/분/초</li>
+    </ul>
+
+
+    <script>
+        let today = new Date();
+        console.log(today);
+        console.log(today.getFullYear());
+        console.log(today.getMonth()+1);
+        console.log(today.getDate());
+        console.log(today.getDay());
+        console.log(today.getHours());
+        console.log(today.getMinutes());
+        console.log(today.getSeconds());
+        let today2 = today.toLocaleDateString();        // 2024. 3. 18.
+        console.log(today2);
+        let time = today.toLocaleTimeString();          // 오후 00:00:00
+        console.log(time);
+        let dateTime = today.toLocaleString();          // 2924. 3. 18. 오후 00:00:00
+        console.log(dateTime);
+        let birth = "010101-1234567"
+        let birthnum = birth.slice(0,2);
+        let birthday = Number(birthnum);
+        console.log(today2 - birthnum);
+
+    </script>
+
+</body>
+</html>
